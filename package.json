@@ -1,0 +1,19 @@
+{
+  "name": "goapostille.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static high-conversion landing pages for GOApostille.com.",
+  "scripts": {
+    "build": "node scripts/generate-site.mjs",
+    "check": "node --check scripts/generate-site.mjs && node --check app.js",
+    "serve": "python3 -m http.server 8081"
+  },
+  "keywords": [
+    "apostille",
+    "legalisasi dokumen",
+    "penerjemah tersumpah",
+    "goapostille"
+  ],
+  "author": "GOApostille.com",
+  "license": "UNLICENSED"
+}
