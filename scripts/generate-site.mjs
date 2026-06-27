@@ -28,7 +28,7 @@ const pages = [
     eyebrow: "Platform dokumen luar negeri",
     h1: "Urus apostille, legalisasi, dan terjemahan resmi dari satu layar.",
     lead:
-      "GOApostille dibuat seperti platform mobile app: pilih layanan, kirim foto dokumen, dapat estimasi, lalu tim membantu proses sampai dokumen siap dipakai untuk luar negeri.",
+      "Kirim foto dokumen, sebutkan negara tujuan, lalu tim membantu memberi arahan proses yang paling sesuai: apostille, legalisasi, atau terjemahan tersumpah.",
     primaryCta: "Free review dokumen",
     secondaryCta: "Lihat layanan",
     defaultMessage:
@@ -42,7 +42,7 @@ const pages = [
     ],
     servicesTitle: "Pilih layanan sesuai tujuan dokumen",
     servicesLead:
-      "Konten dan struktur halaman disiapkan untuk kebutuhan Google Ads: kata kunci utama tetap masuk, tetapi redaksi dibuat berbeda dari Jakarta Apostille.",
+      "Mulai dari dokumen pribadi, pendidikan, pernikahan, sampai dokumen bisnis. Semua diarahkan lewat alur singkat agar Anda tahu langkah berikutnya sebelum mengirim dokumen asli.",
     services: [
       {
         title: "Apostille Dokumen Pernikahan",
@@ -63,14 +63,14 @@ const pages = [
         href: "/jasa-penerjemah-tersumpah/"
       }
     ],
-    trustTitle: "Kenapa user lebih cepat yakin?",
+    trustTitle: "Kenapa prosesnya terasa lebih ringan?",
     trustLead:
-      "Halaman didesain untuk mengurangi ragu: ada alur jelas, benefit konkret, dan jalur WhatsApp yang selalu terlihat di mobile.",
+      "Calon klien sering ragu karena syarat tiap negara berbeda. Karena itu GOApostille memulai dari review dokumen, bukan dari pembayaran.",
     trustItems: [
       ["Review awal gratis", "Calon klien bisa kirim foto dokumen dulu sebelum bayar."],
       ["Estimasi transparan", "Tim memberi arahan layanan, durasi, dan kebutuhan dokumen."],
       ["Bisa jarak jauh", "Konsultasi dan pengiriman dokumen dapat dimulai dari WhatsApp."],
-      ["Fokus luar negeri", "Konten diarahkan untuk visa, studi, kerja, menikah, dan bisnis internasional."]
+      ["Fokus luar negeri", "Arahan disesuaikan untuk visa, studi, kerja, menikah, dan bisnis internasional."]
     ],
     keywordsList: [
       "jasa apostille",
@@ -107,7 +107,7 @@ const pages = [
       "Jasa apostille dokumen pernikahan untuk legalisasi buku nikah, akta nikah, surat nikah, dan marriage certificate. Free review via WhatsApp.",
     keywords:
       "legalisasi buku nikah, legalisasi akta nikah, apostille buku nikah, legalisasi dokumen pernikahan, apostille dokumen pernikahan, apostille marriage certificate, apostille marriage document, apostille surat nikah, jasa apostille akta nikah, legalisasi akta nikah untuk luar negeri",
-    eyebrow: "Landing page Google Ads",
+    eyebrow: "Dokumen pernikahan luar negeri",
     h1: "Apostille dokumen pernikahan tanpa tebak-tebakan syarat.",
     lead:
       "Kirim foto buku nikah, akta nikah, atau surat nikah. GOApostille bantu cek apakah dokumen perlu terjemahan tersumpah, apostille Kemenkumham, legalisasi tambahan, atau format pendukung untuk negara tujuan.",
@@ -124,7 +124,7 @@ const pages = [
     ],
     servicesTitle: "Dokumen pernikahan yang sering diproses",
     servicesLead:
-      "Halaman ini mengandung keyword iklan seperti legalisasi buku nikah, apostille buku nikah, legalisasi akta nikah, dan apostille dokumen pernikahan.",
+      "Setiap dokumen pernikahan bisa memiliki jalur berbeda. Tim akan mengecek jenis dokumen, bahasa, dan negara tujuan sebelum memberi estimasi proses.",
     services: [
       {
         title: "Legalisasi buku nikah",
@@ -145,7 +145,7 @@ const pages = [
         href: "/jasa-penerjemah-tersumpah/"
       }
     ],
-    trustTitle: "Dibuat untuk pasangan yang butuh kepastian",
+    trustTitle: "Untuk pasangan yang butuh kepastian",
     trustLead:
       "Dokumen pernikahan sering sensitif karena berkaitan dengan visa, pindah negara, atau pencatatan sipil. Karena itu CTA diarahkan ke review dokumen dulu, bukan langsung bayar.",
     trustItems: [
@@ -230,7 +230,7 @@ const pages = [
     trustLead:
       "Halaman dibuat agar calon klien cepat paham: dokumen apa yang dikirim, tujuan apa yang dijelaskan, dan kapan tim menghubungi balik.",
     trustItems: [
-      ["Bahasa awam", "Tidak memakai istilah hukum berlebihan di bagian awal."],
+      ["Bahasa awam", "Penjelasan dibuat ringkas agar mudah dipahami sejak konsultasi pertama."],
       ["Keyword tepat", "SEO tetap kuat untuk apostille ijazah dan legalisasi transkrip nilai."],
       ["CTA jelas", "Review dokumen gratis diarahkan langsung ke WhatsApp."],
       ["Mobile first", "Tampilan nyaman untuk user yang datang dari Google Ads mobile."]
@@ -288,7 +288,7 @@ const pages = [
     ],
     servicesTitle: "Dokumen yang sering diterjemahkan",
     servicesLead:
-      "Landing page ini mengikuti keyword riset penerjemah tersumpah, tetapi memakai angle platform yang lebih praktis dan konversi tinggi.",
+      "Sebelum menghitung biaya, tim perlu melihat jenis dokumen, bahasa tujuan, jumlah halaman, dan apakah dokumen perlu dilegalisasi setelah diterjemahkan.",
     services: [
       {
         title: "Penerjemah tersumpah ijazah",
@@ -673,6 +673,12 @@ const workflow = [
   ["Konfirmasi biaya", "Setelah dokumen jelas, Anda mendapat estimasi biaya, durasi, dan langkah berikutnya."],
   ["Update proses", "Status dan kebutuhan tambahan diinformasikan melalui WhatsApp agar mudah dipantau."]
 ];
+const workflowEn = [
+  ["Send document photos", "Start from WhatsApp. Photos are enough for an initial review and service estimate."],
+  ["Check the service route", "The team maps whether you need apostille, legalization, sworn translation, or a combination."],
+  ["Confirm the estimate", "Once the document is clear, you receive estimated cost, duration, and next steps."],
+  ["Get process updates", "Status and additional requirements are shared through WhatsApp so they are easy to follow."]
+];
 
 const escapeHtml = (value) =>
   String(value)
@@ -718,6 +724,7 @@ function header(page) {
 }
 
 function phoneMockup(page) {
+  const isEn = page.lang === "en";
   const icons = ["OK", "GO", "WA"];
   const serviceItems = page.services
     .slice(0, 3)
@@ -747,8 +754,8 @@ function phoneMockup(page) {
         </div>
         <div class="app-panel">
           <div class="step-card">
-            <strong>Status review dokumen</strong>
-            <span>Upload foto, pilih layanan, tunggu arahan tim.</span>
+            <strong>${isEn ? "Document review status" : "Status review dokumen"}</strong>
+            <span>${isEn ? "Upload photos, choose a service, and wait for guidance." : "Upload foto, pilih layanan, tunggu arahan tim."}</span>
             <div class="progress-row" aria-hidden="true"><i></i><i></i><i></i></div>
           </div>
           <div class="stat-grid">${stats}</div>
@@ -758,7 +765,42 @@ function phoneMockup(page) {
     </aside>`;
 }
 
+function reviewForm(page, variant = "") {
+  const formClass = ["quote-form", variant].filter(Boolean).join(" ");
+  const isEn = page.lang === "en";
+  return `
+          <form class="${formClass}" data-wa-form>
+            <div class="field">
+              <label for="name">${isEn ? "Name" : "Nama"}</label>
+              <input id="name" name="name" autocomplete="name" placeholder="${isEn ? "Your name" : "Nama Anda"}" required>
+            </div>
+            <div class="field">
+              <label for="service">${isEn ? "Service" : "Layanan"}</label>
+              <select id="service" name="service">
+                <option value="apostille">${isEn ? "Document apostille" : "Apostille dokumen"}</option>
+                <option value="legalization">${isEn ? "Document legalization" : "Legalisasi dokumen"}</option>
+                <option value="translation">${isEn ? "Sworn translation" : "Penerjemah tersumpah"}</option>
+                <option value="education">${isEn ? "Education document apostille" : "Apostille dokumen pendidikan"}</option>
+                <option value="marriage">${isEn ? "Marriage document apostille" : "Apostille dokumen pernikahan"}</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="document">${isEn ? "Document type" : "Jenis dokumen"}</label>
+              <input id="document" name="document" placeholder="${isEn ? "Example: diploma, marriage book, birth certificate" : "Contoh: ijazah, buku nikah, akta lahir"}">
+            </div>
+            <div class="field">
+              <label for="need">${isEn ? "Notes" : "Catatan"}</label>
+              <textarea id="need" name="need" placeholder="${isEn ? "Destination country, deadline, or document purpose" : "Negara tujuan, deadline, atau kebutuhan Anda"}"></textarea>
+            </div>
+            <button class="button whatsapp" type="submit">${isEn ? "Open WhatsApp for free review" : "Buka WhatsApp untuk review gratis"}</button>
+          </form>`;
+}
+
 function hero(page) {
+  const isEn = page.lang === "en";
+  const trustBadges = isEn
+    ? ["Free consultation", "Document review first", "Mobile friendly", "WhatsApp updates"]
+    : ["Free konsultasi", "Review dokumen dulu", "Mobile friendly", "Update via WhatsApp"];
   return `
     <section class="hero">
       <div class="container hero-grid">
@@ -770,12 +812,29 @@ function hero(page) {
             <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">${escapeHtml(page.primaryCta)}</a>
             <a class="button secondary" href="#layanan">${escapeHtml(page.secondaryCta)}</a>
           </div>
-          <ul class="micro-trust" aria-label="Keunggulan cepat">
-            <li>Free konsultasi</li>
-            <li>Review dokumen dulu</li>
-            <li>Mobile friendly</li>
-            <li>Update via WhatsApp</li>
+          <ul class="micro-trust" aria-label="${isEn ? "Quick benefits" : "Keunggulan cepat"}">
+            ${trustBadges.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
           </ul>
+        </div>
+        <aside class="hero-form-card" aria-label="Form review dokumen gratis">
+          <span class="kicker">${isEn ? "Document review form" : "Form review dokumen"}</span>
+          <h2>${isEn ? "Start with a free document check." : "Mulai dari cek dokumen gratis."}</h2>
+          <p>${isEn ? "Fill this in briefly and WhatsApp will open with a clean message format so the team can review your document faster." : "Isi singkat, lalu WhatsApp akan terbuka dengan format pesan yang rapi. Tim bisa langsung memahami dokumen dan tujuan Anda."}</p>
+          ${reviewForm(page, "quote-form-light")}
+        </aside>
+      </div>
+    </section>`;
+}
+
+function appPreview(page) {
+  const isEn = page.lang === "en";
+  return `
+    <section class="section app-preview">
+      <div class="container app-preview-grid">
+        <div class="section-head">
+          <span class="kicker">${isEn ? "Mobile flow" : "Alur mobile"}</span>
+          <h2>${isEn ? "Simple like an app, handled by a real document team." : "Ringkas seperti memakai aplikasi, tetap ditangani oleh tim manusia."}</h2>
+          <p>${isEn ? "This preview shows the GOApostille flow: document review, service mapping, and status updates through WhatsApp." : "Preview ini menunjukkan alur kerja GOApostille: dokumen dicek, kebutuhan layanan dipetakan, lalu update proses tetap mudah dipantau lewat WhatsApp."}</p>
         </div>
         ${phoneMockup(page)}
       </div>
@@ -835,8 +894,9 @@ function trust(page) {
     </section>`;
 }
 
-function processSection() {
-  const cards = workflow
+function processSection(page) {
+  const isEn = page.lang === "en";
+  const cards = (isEn ? workflowEn : workflow)
     .map(
       ([title, text]) => `
         <article class="card">
@@ -850,9 +910,9 @@ function processSection() {
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="kicker">Alur cepat</span>
-          <h2>Dari Google ke WhatsApp, lalu dokumen langsung dicek.</h2>
-          <p>Alur dibuat pendek karena mayoritas calon klien datang dari mobile search dan butuh jawaban cepat.</p>
+          <span class="kicker">${isEn ? "Quick process" : "Alur cepat"}</span>
+          <h2>${isEn ? "From first review to documents ready for overseas use." : "Dari konsultasi awal sampai dokumen siap dipakai."}</h2>
+          <p>${isEn ? "You do not need to guess the right route. The team reviews your document type, destination country, and service needs." : "Anda tidak perlu menebak harus mulai dari mana. Tim akan membantu membaca kebutuhan dokumen berdasarkan negara tujuan dan jenis layanan."}</p>
         </div>
         <div class="workflow">${cards}</div>
       </div>
@@ -860,14 +920,15 @@ function processSection() {
 }
 
 function keywords(page) {
+  const isEn = page.lang === "en";
   const tags = page.keywordsList.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
   return `
     <section class="section tight">
       <div class="container">
         <div class="section-head">
-          <span class="kicker">Keyword coverage</span>
-          <h2>Kata kunci masuk natural di halaman.</h2>
-          <p>Keyword ditempatkan dalam judul, paragraf, FAQ, dan tag topik agar tetap terbaca manusia, bukan sekadar isian mesin pencari.</p>
+          <span class="kicker">${isEn ? "Service topics" : "Topik layanan"}</span>
+          <h2>${isEn ? "Common document needs clients search for." : "Jenis pencarian yang sering dibutuhkan klien."}</h2>
+          <p>${isEn ? "These topics help match your document with the right service for visa, study, work, marriage, or overseas administration." : "Topik berikut membantu Anda menemukan layanan yang paling dekat dengan kebutuhan dokumen, baik untuk visa, studi, kerja, menikah, maupun administrasi luar negeri."}</p>
         </div>
         <div class="keyword-cloud">${tags}</div>
       </div>
@@ -875,50 +936,31 @@ function keywords(page) {
 }
 
 function cta(page) {
+  const isEn = page.lang === "en";
   return `
     <section class="section" id="konsultasi">
       <div class="container">
-        <div class="cta-panel">
+        <div class="cta-panel cta-panel-simple">
           <div>
-            <span class="kicker">Free review dokumen</span>
-            <h2>Kirim dokumen sekarang, dapat arahan layanan yang paling pas.</h2>
-            <p>Isi singkat form ini untuk membuka WhatsApp otomatis dengan format pesan yang rapi. Cocok untuk user mobile yang ingin cepat dibalas.</p>
+            <span class="kicker">${isEn ? "Free document review" : "Free review dokumen"}</span>
+            <h2>${isEn ? "Not sure which route is right? Send the document first." : "Masih ragu jalurnya? Kirim dulu dokumennya."}</h2>
+            <p>${isEn ? "The team can check whether your document needs apostille, legalization, sworn translation, or a combination of services." : "Tim akan membantu mengecek apakah dokumen Anda perlu apostille, legalisasi, penerjemah tersumpah, atau kombinasi beberapa layanan."}</p>
             <div class="hero-actions">
-              <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">Chat langsung WhatsApp</a>
-              <a class="button secondary" href="tel:+62817322271">Telepon 0817-322-271</a>
+              <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">${isEn ? "Chat on WhatsApp" : "Chat langsung WhatsApp"}</a>
+              <a class="button secondary" href="tel:+62817322271">${isEn ? "Call 0817-322-271" : "Telepon 0817-322-271"}</a>
             </div>
           </div>
-          <form class="quote-form" data-wa-form>
-            <div class="field">
-              <label for="name">Nama</label>
-              <input id="name" name="name" autocomplete="name" placeholder="Nama Anda" required>
-            </div>
-            <div class="field">
-              <label for="service">Layanan</label>
-              <select id="service" name="service">
-                <option value="apostille">Apostille dokumen</option>
-                <option value="legalization">Legalisasi dokumen</option>
-                <option value="translation">Penerjemah tersumpah</option>
-                <option value="education">Apostille dokumen pendidikan</option>
-                <option value="marriage">Apostille dokumen pernikahan</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="document">Jenis dokumen</label>
-              <input id="document" name="document" placeholder="Contoh: ijazah, buku nikah, akta lahir">
-            </div>
-            <div class="field">
-              <label for="need">Catatan</label>
-              <textarea id="need" name="need" placeholder="Negara tujuan, deadline, atau kebutuhan Anda"></textarea>
-            </div>
-            <button class="button whatsapp" type="submit">Buka WhatsApp dengan pesan</button>
-          </form>
+          <div class="cta-note">
+            <strong>${isEn ? "Fast response via WhatsApp" : "Respon cepat via WhatsApp"}</strong>
+            <span>${isEn ? "Prepare document photos, destination country, and deadline if any." : "Siapkan foto dokumen, negara tujuan, dan deadline bila ada."}</span>
+          </div>
         </div>
       </div>
     </section>`;
 }
 
 function faq(page) {
+  const isEn = page.lang === "en";
   const items = page.faq
     .map(
       ([question, answer]) => `
@@ -934,31 +976,32 @@ function faq(page) {
       <div class="container">
         <div class="section-head">
           <span class="kicker">FAQ</span>
-          <h2>Pertanyaan yang sering muncul sebelum chat.</h2>
+          <h2>${isEn ? "Questions people ask before chatting." : "Pertanyaan yang sering muncul sebelum chat."}</h2>
         </div>
         <div class="faq">${items}</div>
       </div>
     </section>`;
 }
 
-function footer() {
+function footer(page) {
+  const isEn = page.lang === "en";
   return `
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
           <h3>GOApostille.com</h3>
-          <p>Platform mobile-first untuk apostille, legalisasi dokumen, dan penerjemah tersumpah. Mulai dari review dokumen gratis via WhatsApp.</p>
+          <p>${isEn ? "A mobile-first platform for apostille, document legalization, and sworn translation. Start with a free WhatsApp document review." : "Platform mobile-first untuk apostille, legalisasi dokumen, dan penerjemah tersumpah. Mulai dari review dokumen gratis via WhatsApp."}</p>
         </div>
         <div>
-          <strong>Layanan</strong>
+          <strong>${isEn ? "Services" : "Layanan"}</strong>
           <div class="footer-links">
-            <a href="/apostille-dokumen-pernikahan/">Dokumen pernikahan</a>
-            <a href="/apostille-dokumen-pendidikan/">Dokumen pendidikan</a>
-            <a href="/jasa-penerjemah-tersumpah/">Penerjemah tersumpah</a>
+            <a href="/apostille-dokumen-pernikahan/">${isEn ? "Marriage documents" : "Dokumen pernikahan"}</a>
+            <a href="/apostille-dokumen-pendidikan/">${isEn ? "Education documents" : "Dokumen pendidikan"}</a>
+            <a href="/jasa-penerjemah-tersumpah/">${isEn ? "Sworn translator" : "Penerjemah tersumpah"}</a>
           </div>
         </div>
         <div>
-          <strong>Bahasa</strong>
+          <strong>${isEn ? "Language" : "Bahasa"}</strong>
           <div class="footer-links">
             <a href="/">Indonesia</a>
             <a href="/en/">English</a>
@@ -968,10 +1011,10 @@ function footer() {
           </div>
         </div>
         <div>
-          <strong>Kontak</strong>
+          <strong>${isEn ? "Contact" : "Kontak"}</strong>
           <div class="footer-links">
             <a href="tel:+62817322271">0817-322-271</a>
-            <a href="${waUrl("Halo GOApostille, saya ingin konsultasi dokumen.")}">WhatsApp</a>
+            <a href="${waUrl(isEn ? "Hello GOApostille, I would like a document consultation." : "Halo GOApostille, saya ingin konsultasi dokumen.")}">WhatsApp</a>
             <a href="https://www.goapostille.com/">www.goapostille.com</a>
           </div>
         </div>
@@ -1043,19 +1086,20 @@ function html(page) {
     ${header(page)}
     <main id="content">
       ${hero(page)}
+      ${appPreview(page)}
       ${services(page)}
       ${trust(page)}
-      ${processSection()}
+      ${processSection(page)}
       ${keywords(page)}
       ${cta(page)}
       ${faq(page)}
     </main>
-    ${footer()}
+    ${footer(page)}
     <a class="mobile-wa" href="${waUrl(page.defaultMessage)}">
       <span class="icon">WA</span>
       <span>
-        <strong>Free Review Dokumen</strong>
-        <span>Free konsultasi via WhatsApp</span>
+        <strong>${page.lang === "en" ? "Free Document Review" : "Free Review Dokumen"}</strong>
+        <span>${page.lang === "en" ? "Free WhatsApp consultation" : "Free konsultasi via WhatsApp"}</span>
       </span>
     </a>
     <script src="/app.js" defer></script>
@@ -1067,7 +1111,7 @@ function html(page) {
 async function writePage(page) {
   const dir = path.join(root, page.path);
   await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, "index.html"), html(page), "utf8");
+  await writeFile(path.join(dir, "index.html"), html(page).replace(/[ \t]+$/gm, ""), "utf8");
 }
 
 async function writeRobots() {
