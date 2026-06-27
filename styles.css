@@ -312,6 +312,44 @@ h1 {
   color: var(--muted);
 }
 
+.hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.proof-pill {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid rgba(11, 99, 246, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.proof-pill strong {
+  grid-row: span 2;
+  color: var(--blue);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.proof-pill span {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.proof-pill em {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+}
+
 .phone-card {
   position: relative;
   padding: 14px;
@@ -585,6 +623,121 @@ h2 {
   font-weight: 800;
 }
 
+.proof-section {
+  padding-top: 20px;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.review-badge,
+.maps-card,
+.testimonial-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(7, 27, 58, 0.055);
+}
+
+.review-badge,
+.maps-card {
+  padding: 26px;
+}
+
+.badge-label {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.review-badge strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--navy);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.review-badge p,
+.maps-card p,
+.testimonial-card p {
+  color: var(--muted);
+}
+
+.review-badge .button {
+  margin-top: 10px;
+}
+
+.maps-card {
+  min-height: 250px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+    linear-gradient(135deg, var(--blue-3), #ffffff);
+}
+
+.maps-card h3 {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.maps-card::after {
+  content: "";
+  display: block;
+  height: 84px;
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(11, 99, 246, 0.22) 48%, rgba(11, 99, 246, 0.22) 52%, transparent 52%),
+    linear-gradient(0deg, transparent 48%, rgba(0, 184, 217, 0.18) 48%, rgba(0, 184, 217, 0.18) 52%, transparent 52%),
+    radial-gradient(circle at 60% 45%, var(--red) 0 7px, transparent 8px),
+    #f4f9ff;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.testimonial-card {
+  padding: 22px;
+}
+
+.stars {
+  margin-bottom: 10px;
+  color: #d97706;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.testimonial-card strong,
+.testimonial-card span {
+  display: block;
+}
+
+.testimonial-card strong {
+  color: var(--navy);
+}
+
+.testimonial-card span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .workflow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -702,6 +855,46 @@ h2 {
 
 .quote-form-light .button {
   width: 100%;
+}
+
+.deal-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 138, 0, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff7ec, #ffffff);
+}
+
+.deal-card span,
+.deal-card strong {
+  display: block;
+}
+
+.deal-card span {
+  color: #94510a;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.deal-card strong {
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.deal-card b {
+  min-width: 66px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--orange);
+  text-align: center;
+  font-size: 16px;
 }
 
 .field {
@@ -911,6 +1104,9 @@ body.menu-open .mobile-menu {
   .grid.three,
   .grid.two,
   .trust-strip,
+  .hero-proof,
+  .proof-grid,
+  .testimonial-grid,
   .workflow {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -987,6 +1183,9 @@ body.menu-open .mobile-menu {
   .service-mini,
   .card,
   .faq details,
+  .review-badge,
+  .maps-card,
+  .testimonial-card,
   .phone-card,
   .hero-form-card,
   .mobile-wa {
@@ -997,6 +1196,9 @@ body.menu-open .mobile-menu {
   .grid.three,
   .grid.two,
   .trust-strip,
+  .hero-proof,
+  .proof-grid,
+  .testimonial-grid,
   .workflow {
     grid-template-columns: 1fr;
   }
@@ -1006,9 +1208,21 @@ body.menu-open .mobile-menu {
   }
 
   .card,
-  .keyword-cloud {
+  .keyword-cloud,
+  .review-badge,
+  .maps-card,
+  .testimonial-card {
     border-radius: 22px;
     padding: 20px;
+  }
+
+  .deal-card {
+    align-items: flex-start;
+  }
+
+  .deal-card b {
+    min-width: 58px;
+    font-size: 14px;
   }
 
   .mobile-wa {

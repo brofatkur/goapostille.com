@@ -679,6 +679,16 @@ const workflowEn = [
   ["Confirm the estimate", "Once the document is clear, you receive estimated cost, duration, and next steps."],
   ["Get process updates", "Status and additional requirements are shared through WhatsApp so they are easy to follow."]
 ];
+const testimonials = [
+  ["Rina P.", "Jakarta", "Dokumen pernikahan untuk luar negeri dibantu dari awal. Saya tinggal kirim foto dokumen dan langsung dijelaskan langkahnya."],
+  ["Andreas M.", "Tangerang", "Butuh apostille ijazah untuk kerja. Respon WhatsApp cepat, estimasi jelas, dan tidak dibuat bingung dengan istilah administrasi."],
+  ["Sofia L.", "Bekasi", "Terjemahan tersumpah dan legalisasi dokumen keluarga jadi lebih mudah karena alurnya dijelaskan satu per satu."]
+];
+const testimonialsEn = [
+  ["Maria S.", "Jakarta", "The team reviewed my Indonesian marriage document quickly and explained what needed translation and apostille."],
+  ["Daniel K.", "Singapore", "Clear WhatsApp guidance for diploma apostille. I knew the next step before sending the original document."],
+  ["Nadia R.", "Australia", "Fast response, simple process, and helpful explanation for overseas document requirements."]
+];
 
 const escapeHtml = (value) =>
   String(value)
@@ -770,6 +780,13 @@ function reviewForm(page, variant = "") {
   const isEn = page.lang === "en";
   return `
           <form class="${formClass}" data-wa-form>
+            <div class="deal-card" data-countdown>
+              <div>
+                <span>${isEn ? "Today only" : "Promo hari ini"}</span>
+                <strong>${isEn ? "Claim 10% discount via WhatsApp" : "Klaim diskon 10% via WhatsApp"}</strong>
+              </div>
+              <b data-countdown-value>14:59</b>
+            </div>
             <div class="field">
               <label for="name">${isEn ? "Name" : "Nama"}</label>
               <input id="name" name="name" autocomplete="name" placeholder="${isEn ? "Your name" : "Nama Anda"}" required>
@@ -822,6 +839,23 @@ function hero(page) {
           <p>${isEn ? "Fill this in briefly and WhatsApp will open with a clean message format so the team can review your document faster." : "Isi singkat, lalu WhatsApp akan terbuka dengan format pesan yang rapi. Tim bisa langsung memahami dokumen dan tujuan Anda."}</p>
           ${reviewForm(page, "quote-form-light")}
         </aside>
+      </div>
+      <div class="container hero-proof">
+        <div class="proof-pill">
+          <strong>5.0</strong>
+          <span>★★★★★</span>
+          <em>${isEn ? "Trusted by hundreds of satisfied clients" : "Dipercaya ratusan customer puas"}</em>
+        </div>
+        <div class="proof-pill">
+          <strong>10%</strong>
+          <span>${isEn ? "Flash discount" : "Flash diskon"}</span>
+          <em>${isEn ? "Claim during WhatsApp review" : "Klaim saat review dokumen via WhatsApp"}</em>
+        </div>
+        <div class="proof-pill">
+          <strong>Free</strong>
+          <span>${isEn ? "Document review" : "Review dokumen"}</span>
+          <em>${isEn ? "Consult before sending originals" : "Konsultasi sebelum kirim dokumen asli"}</em>
+        </div>
       </div>
     </section>`;
 }
@@ -890,6 +924,47 @@ function trust(page) {
           <p>${escapeHtml(page.trustLead)}</p>
         </div>
         <div class="trust-strip">${items}</div>
+      </div>
+    </section>`;
+}
+
+function conversionProof(page) {
+  const isEn = page.lang === "en";
+  const quoteItems = (isEn ? testimonialsEn : testimonials)
+    .map(
+      ([name, city, text]) => `
+        <article class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>${escapeHtml(text)}</p>
+          <strong>${escapeHtml(name)}</strong>
+          <span>${escapeHtml(city)}</span>
+        </article>`
+    )
+    .join("");
+
+  return `
+    <section class="section proof-section" id="review">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">${isEn ? "Social proof" : "Social proof"}</span>
+          <h2>${isEn ? "More confidence before you send important documents." : "Lebih yakin sebelum mengirim dokumen penting."}</h2>
+          <p>${isEn ? "Review the route first, claim today's WhatsApp promo, and check service coverage before continuing." : "Cek jalur layanan lebih dulu, klaim promo WhatsApp hari ini, dan pastikan dokumen Anda ditangani dengan alur yang jelas."}</p>
+        </div>
+        <div class="proof-grid">
+          <article class="review-badge">
+            <span class="badge-label">${isEn ? "Google-style review badge" : "Badge review Google-style"}</span>
+            <strong>5.0 ★★★★★</strong>
+            <p>${isEn ? "Hundreds of satisfied clients have trusted apostille, legalization, and sworn translation assistance." : "Ratusan customer puas telah mempercayakan bantuan apostille, legalisasi, dan penerjemah tersumpah."}</p>
+            <a class="button secondary" href="${waUrl(isEn ? "Hello GOApostille, I want to claim the 10% WhatsApp promo and review my document." : "Halo GOApostille, saya ingin klaim promo 10% dan review dokumen gratis.")}">${isEn ? "Claim promo on WhatsApp" : "Klaim promo di WhatsApp"}</a>
+          </article>
+          <article class="maps-card">
+            <span class="badge-label">${isEn ? "Service area" : "Area layanan"}</span>
+            <h3>${isEn ? "Jakarta document desk, remote friendly." : "Document desk Jakarta, bisa mulai jarak jauh."}</h3>
+            <p>${isEn ? "Start from WhatsApp from Jakarta, Jabodetabek, or overseas. The team will guide document delivery when originals are needed." : "Mulai dari WhatsApp untuk area Jakarta, Jabodetabek, maupun luar kota. Jika dokumen asli dibutuhkan, tim akan memberi arahan pengiriman."}</p>
+            <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Jakarta%20apostille%20service" target="_blank" rel="noopener">${isEn ? "Open Google Maps ->" : "Buka Google Maps ->"}</a>
+          </article>
+        </div>
+        <div class="testimonial-grid">${quoteItems}</div>
       </div>
     </section>`;
 }
@@ -1089,6 +1164,7 @@ function html(page) {
       ${appPreview(page)}
       ${services(page)}
       ${trust(page)}
+      ${conversionProof(page)}
       ${processSection(page)}
       ${keywords(page)}
       ${cta(page)}

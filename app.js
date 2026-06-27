@@ -3,6 +3,7 @@
   const toggle = document.querySelector("[data-menu-toggle]");
   const menuLinks = document.querySelectorAll("[data-mobile-menu] a");
   const forms = document.querySelectorAll("[data-wa-form]");
+  const countdowns = document.querySelectorAll("[data-countdown-value]");
   const phone = "62817322271";
 
   const serviceLabels = {
@@ -41,6 +42,23 @@
     });
   });
 
+  const updateCountdowns = () => {
+    const now = new Date();
+    const end = new Date(now);
+    end.setHours(23, 59, 59, 999);
+    const diff = Math.max(0, end - now);
+    const hours = String(Math.floor(diff / 3600000)).padStart(2, "0");
+    const minutes = String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0");
+    countdowns.forEach((item) => {
+      item.textContent = `${hours}:${minutes}`;
+    });
+  };
+
+  if (countdowns.length) {
+    updateCountdowns();
+    window.setInterval(updateCountdowns, 60000);
+  }
+
   forms.forEach((form) => {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -51,6 +69,7 @@
       const need = data.get("need") || "Saya ingin review dokumen gratis.";
       const message = [
         "Halo GOApostille, saya mau konsultasi.",
+        "Saya ingin klaim promo diskon 10% dan review dokumen gratis.",
         `Nama: ${name}`,
         `Layanan: ${service}`,
         `Jenis dokumen: ${documentType}`,
