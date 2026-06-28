@@ -3,7 +3,6 @@
   const toggle = document.querySelector("[data-menu-toggle]");
   const menuLinks = document.querySelectorAll("[data-mobile-menu] a");
   const forms = document.querySelectorAll("[data-wa-form]");
-  const countdowns = document.querySelectorAll("[data-countdown-value]");
   const proofToast = document.querySelector("[data-proof-toast]");
   const proofName = document.querySelector("[data-proof-name]");
   const proofAction = document.querySelector("[data-proof-action]");
@@ -23,9 +22,9 @@
   };
 
   const proofItems = [
-    ["Fat***", "baru klaim review dokumen gratis"],
+    ["Fat***", "baru mengirim dokumen untuk review"],
     ["Rin***", "baru konsultasi apostille ijazah"],
-    ["And***", "baru klaim diskon 10% via WhatsApp"],
+    ["And***", "baru cek jalur legalisasi dokumen"],
     ["Sof***", "baru cek dokumen pernikahan"],
     ["Hen***", "baru tanya penerjemah tersumpah"]
   ];
@@ -52,23 +51,6 @@
       openWhatsApp(message);
     });
   });
-
-  const updateCountdowns = () => {
-    const now = new Date();
-    const end = new Date(now);
-    end.setHours(23, 59, 59, 999);
-    const diff = Math.max(0, end - now);
-    const hours = String(Math.floor(diff / 3600000)).padStart(2, "0");
-    const minutes = String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0");
-    countdowns.forEach((item) => {
-      item.textContent = `${hours}:${minutes}`;
-    });
-  };
-
-  if (countdowns.length) {
-    updateCountdowns();
-    window.setInterval(updateCountdowns, 60000);
-  }
 
   if (proofToast && proofName && proofAction) {
     let proofIndex = 0;
@@ -103,7 +85,7 @@
       const need = data.get("need") || "Saya ingin review dokumen gratis.";
       const message = [
         "Halo GOApostille, saya mau konsultasi.",
-        "Saya ingin klaim promo diskon 10% dan review dokumen gratis.",
+        "Saya ingin review dokumen sebelum proses dimulai.",
         `Nama: ${name}`,
         `Layanan: ${service}`,
         `Jenis dokumen: ${documentType}`,

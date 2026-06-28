@@ -28,55 +28,55 @@ const pages = [
     lang: "id",
     title: "GOApostille.com | Jasa Apostille, Legalisasi Dokumen & Penerjemah Tersumpah",
     description:
-      "Platform jasa apostille, legalisasi dokumen, dan penerjemah tersumpah yang mobile friendly. Review dokumen gratis via WhatsApp.",
+      "Platform terpercaya untuk jasa apostille, legalisasi dokumen, dan penerjemah tersumpah. Konsultasi awal dan review dokumen via WhatsApp.",
     keywords:
       "jasa apostille, apostille kemenkumham, legalisasi dokumen, penerjemah tersumpah jakarta, legalisasi buku nikah, apostille ijazah",
-    eyebrow: "Platform dokumen luar negeri",
-    h1: "Urus apostille, legalisasi, dan terjemahan resmi dari satu layar.",
+    eyebrow: "Platform terpercaya untuk dokumen lintas negara",
+    h1: "Apostille, legalisasi, dan penerjemah tersumpah — diurus tim ahli, dipantau dari WhatsApp Anda.",
     lead:
-      "Kirim foto dokumen, sebutkan negara tujuan, lalu tim membantu memberi arahan proses yang paling sesuai: apostille, legalisasi, atau terjemahan tersumpah.",
-    primaryCta: "Free review dokumen",
+      "Kirim foto dokumen dan sebutkan negara tujuan. Tim kami akan menentukan proses yang tepat — apostille, legalisasi, atau penerjemahan tersumpah — sebelum dokumen asli Anda dikirimkan.",
+    primaryCta: "Konsultasi gratis via WhatsApp",
     secondaryCta: "Lihat layanan",
     defaultMessage:
-      "Halo GOApostille, saya ingin free review dokumen untuk apostille/legalisasi/terjemahan tersumpah.",
+      "Halo GOApostille, saya ingin konsultasi gratis dan review dokumen untuk apostille/legalisasi/terjemahan tersumpah.",
     appTitle: "GOApostille",
     appLead: "Checklist dokumen, estimasi, dan konsultasi dalam satu alur.",
     stats: [
-      ["24/7", "WA aktif"],
-      ["3 tahap", "alur ringkas"],
-      ["Gratis", "review awal"]
+      ["Gratis", "konsultasi awal"],
+      ["Review", "sebelum proses"],
+      ["WA", "update status"]
     ],
     servicesTitle: "Pilih layanan sesuai tujuan dokumen",
     servicesLead:
-      "Mulai dari dokumen pribadi, pendidikan, pernikahan, sampai dokumen bisnis. Semua diarahkan lewat alur singkat agar Anda tahu langkah berikutnya sebelum mengirim dokumen asli.",
+      "Baik untuk keperluan pribadi, pendidikan, pernikahan, maupun bisnis — tim kami membantu memastikan dokumen Anda diproses lewat jalur yang tepat sebelum dikirim.",
     services: [
       {
         title: "Apostille Dokumen Pernikahan",
         text:
-          "Untuk legalisasi buku nikah, legalisasi akta nikah, apostille buku nikah, apostille surat nikah, dan dokumen pernikahan yang dipakai di luar negeri.",
+          "Pengesahan buku nikah, akta nikah, dan surat nikah untuk keperluan di luar negeri — termasuk pernikahan campur, pengajuan visa pasangan, dan administrasi internasional.",
         href: "/apostille-dokumen-pernikahan/"
       },
       {
         title: "Apostille Dokumen Pendidikan",
         text:
-          "Untuk legalisasi ijazah, jasa apostille ijazah, apostille diploma, apostille ijazah SMA, degree certificate, dan academic transcript.",
+          "Pengesahan ijazah, transkrip akademik, dan diploma — mulai dari jenjang SMA hingga gelar sarjana — untuk studi lanjut, kerja, maupun migrasi ke luar negeri.",
         href: "/apostille-dokumen-pendidikan/"
       },
       {
         title: "Jasa Penerjemah Tersumpah",
         text:
-          "Penerjemah tersumpah Jakarta untuk ijazah, paspor, akta lahir, kontrak kerja, visa, beasiswa, imigrasi, dan menikah di luar negeri.",
+          "Penerjemahan resmi untuk ijazah, paspor, akta lahir, dan kontrak kerja oleh penerjemah tersumpah terdaftar — mendukung kebutuhan visa, beasiswa, imigrasi, dan pernikahan di luar negeri.",
         href: "/jasa-penerjemah-tersumpah/"
       }
     ],
-    trustTitle: "Kenapa prosesnya terasa lebih ringan?",
+    trustTitle: "Mengapa prosesnya terasa lebih mudah?",
     trustLead:
-      "Calon klien sering ragu karena syarat tiap negara berbeda. Karena itu GOApostille memulai dari review dokumen, bukan dari pembayaran.",
+      "Setiap negara punya syarat berbeda untuk dokumen yang akan digunakan di luar negeri. Karena itu, GOApostille memulai dari review dokumen — bukan dari pembayaran di muka.",
     trustItems: [
-      ["Review awal gratis", "Calon klien bisa kirim foto dokumen dulu sebelum bayar."],
-      ["Estimasi transparan", "Tim memberi arahan layanan, durasi, dan kebutuhan dokumen."],
-      ["Bisa jarak jauh", "Konsultasi dan pengiriman dokumen dapat dimulai dari WhatsApp."],
-      ["Fokus luar negeri", "Arahan disesuaikan untuk visa, studi, kerja, menikah, dan bisnis internasional."]
+      ["Review awal tanpa biaya", "Kirim foto dokumen lebih dulu sebelum melanjutkan proses."],
+      ["Estimasi yang jelas", "Anda mendapat arahan layanan, durasi, dan kelengkapan dokumen sejak awal."],
+      ["Bisa diurus jarak jauh", "Konsultasi dan pengiriman dokumen dapat dilakukan dari mana saja melalui WhatsApp."],
+      ["Fokus kebutuhan luar negeri", "Arahan disesuaikan untuk visa, studi, kerja, pernikahan, dan urusan bisnis internasional."]
     ],
     keywordsList: [
       "jasa apostille",
@@ -96,7 +96,7 @@ const pages = [
       ],
       [
         "Bisa konsultasi dulu sebelum kirim dokumen?",
-        "Bisa. GOApostille mendorong free review dokumen via WhatsApp agar kebutuhan layanan lebih jelas sebelum proses dimulai."
+        "Bisa. GOApostille mendorong review dokumen via WhatsApp agar kebutuhan layanan lebih jelas sebelum proses dimulai."
       ],
       [
         "Apakah bisa sekalian terjemahan tersumpah?",
@@ -110,7 +110,7 @@ const pages = [
     lang: "id",
     title: "Jasa Apostille Dokumen Pernikahan | Legalisasi Buku Nikah & Akta Nikah",
     description:
-      "Jasa apostille dokumen pernikahan untuk legalisasi buku nikah, akta nikah, surat nikah, dan marriage certificate. Free review via WhatsApp.",
+      "Jasa apostille dokumen pernikahan untuk legalisasi buku nikah, akta nikah, surat nikah, dan marriage certificate. Review via WhatsApp.",
     keywords:
       "legalisasi buku nikah, legalisasi akta nikah, apostille buku nikah, legalisasi dokumen pernikahan, apostille dokumen pernikahan, apostille marriage certificate, apostille marriage document, apostille surat nikah, jasa apostille akta nikah, legalisasi akta nikah untuk luar negeri",
     eyebrow: "Dokumen pernikahan luar negeri",
@@ -120,11 +120,11 @@ const pages = [
     primaryCta: "Cek buku nikah gratis",
     secondaryCta: "Lihat alur",
     defaultMessage:
-      "Halo GOApostille, saya ingin free review untuk apostille/legalisasi dokumen pernikahan.",
+      "Halo GOApostille, saya ingin review untuk apostille/legalisasi dokumen pernikahan.",
     appTitle: "Marriage Doc",
     appLead: "Buku nikah, akta nikah, surat nikah, dan marriage certificate.",
     stats: [
-      ["Free", "review foto"],
+      ["Gratis", "review foto"],
       ["WA", "alur cepat"],
       ["Luar negeri", "siap pakai"]
     ],
@@ -203,7 +203,7 @@ const pages = [
     primaryCta: "Review ijazah gratis",
     secondaryCta: "Cek dokumen",
     defaultMessage:
-      "Halo GOApostille, saya ingin free review untuk apostille/legalisasi ijazah atau dokumen pendidikan.",
+      "Halo GOApostille, saya ingin review untuk apostille/legalisasi ijazah atau dokumen pendidikan.",
     appTitle: "Edu Apostille",
     appLead: "Ijazah, transkrip nilai, diploma, dan degree certificate.",
     stats: [
@@ -213,12 +213,12 @@ const pages = [
     ],
     servicesTitle: "Kebutuhan pendidikan yang bisa dibantu",
     servicesLead:
-      "Keyword Google Ads seperti legalisasi ijazah, jasa apostille ijazah, apostille diploma, dan apostille academic transcript ditempatkan secara natural.",
+      "Pengesahan ijazah, transkrip nilai, diploma, degree certificate, dan academic transcript dapat dicek berdasarkan tujuan studi, kerja, credential evaluation, atau migrasi.",
     services: [
       {
         title: "Apostille ijazah",
         text:
-          "Untuk ijazah SMA, diploma, sarjana, magister, atau dokumen akademik lain yang akan dipakai untuk kampus, visa, atau pekerjaan luar negeri.",
+          "Untuk legalisasi ijazah dan apostille ijazah SMA, diploma, sarjana, magister, atau dokumen akademik lain yang akan dipakai untuk kampus, visa, atau pekerjaan luar negeri.",
         href: "#konsultasi"
       },
       {
@@ -237,8 +237,8 @@ const pages = [
       "Halaman dibuat agar calon klien cepat paham: dokumen apa yang dikirim, tujuan apa yang dijelaskan, dan kapan tim menghubungi balik.",
     trustItems: [
       ["Bahasa awam", "Penjelasan dibuat ringkas agar mudah dipahami sejak konsultasi pertama."],
-      ["Keyword tepat", "SEO tetap kuat untuk apostille ijazah dan legalisasi transkrip nilai."],
-      ["CTA jelas", "Review dokumen gratis diarahkan langsung ke WhatsApp."],
+      ["Keyword tetap natural", "Istilah seperti apostille ijazah dan legalisasi transkrip nilai masuk sebagai kalimat utuh."],
+      ["CTA jelas", "Review dokumen diarahkan langsung ke WhatsApp."],
       ["Mobile first", "Tampilan nyaman untuk user yang datang dari Google Ads mobile."]
     ],
     keywordsList: [
@@ -357,17 +357,17 @@ const pages = [
     lang: "en",
     title: "GOApostille.com | Apostille, Legalization & Sworn Translation Services",
     description:
-      "Mobile-first apostille, document legalization, and sworn translation service for Indonesia-issued documents. Free WhatsApp review.",
+      "Professional apostille, document legalization, and sworn translation service for Indonesia-issued documents. WhatsApp document review available.",
     keywords:
       "apostille service indonesia, document legalization indonesia, sworn translator jakarta, marriage certificate apostille, diploma apostille",
     eyebrow: "Indonesia document platform",
     h1: "A smoother way to prepare Indonesian documents for overseas use.",
     lead:
       "GOApostille helps you review documents, estimate the right process, and continue through WhatsApp for apostille, legalization, and sworn translation services.",
-    primaryCta: "Free document review",
+    primaryCta: "Complimentary document review",
     secondaryCta: "View services",
     defaultMessage:
-      "Hello GOApostille, I would like a free document review for apostille/legalization/sworn translation.",
+      "Hello GOApostille, I would like a document review for apostille/legalization/sworn translation.",
     appTitle: "GOApostille",
     appLead: "Document checklist, estimate, and WhatsApp consultation.",
     stats: [
@@ -402,7 +402,7 @@ const pages = [
     trustLead:
       "You can start by sending photos of your documents. The team checks document type, target country, language, and whether translation is needed.",
     trustItems: [
-      ["Free first review", "Share photos before committing to the process."],
+      ["Complimentary first review", "Share photos before committing to the process."],
       ["Remote friendly", "Start from WhatsApp wherever you are."],
       ["Clear guidance", "Know whether you need apostille, legalization, or translation."],
       ["Conversion focused", "Calls to action stay visible on mobile screens."]
@@ -451,7 +451,7 @@ const pages = [
     appTitle: "Marriage Docs",
     appLead: "Buku nikah, marriage certificate, and civil registry documents.",
     stats: [
-      ["Free", "photo review"],
+      ["Photo", "review"],
       ["WA", "fast flow"],
       ["Overseas", "ready"]
     ],
@@ -498,7 +498,7 @@ const pages = [
       ],
       [
         "Do I need sworn translation?",
-        "Some institutions require a sworn translation. GOApostille checks this during the free review."
+        "Some institutions require a sworn translation. GOApostille checks this during the initial review."
       ],
       [
         "Can I start remotely?",
@@ -674,10 +674,10 @@ const navEn = [
 ];
 
 const workflow = [
-  ["Kirim foto dokumen", "Mulai dari WhatsApp. Foto dokumen cukup untuk review awal dan estimasi kebutuhan."],
-  ["Cek jalur layanan", "Tim memetakan apakah perlu apostille, legalisasi, penerjemah tersumpah, atau kombinasi."],
-  ["Konfirmasi biaya", "Setelah dokumen jelas, Anda mendapat estimasi biaya, durasi, dan langkah berikutnya."],
-  ["Update proses", "Status dan kebutuhan tambahan diinformasikan melalui WhatsApp agar mudah dipantau."]
+  ["Kirim foto dokumen", "Mulai dari WhatsApp. Foto dokumen sudah cukup untuk review awal dan estimasi kebutuhan."],
+  ["Tentukan jalur layanan", "Tim memetakan apakah dokumen Anda memerlukan apostille, legalisasi, penerjemah tersumpah, atau kombinasi ketiganya."],
+  ["Konfirmasi biaya dan estimasi", "Setelah kebutuhan jelas, Anda menerima estimasi biaya, durasi proses, dan dokumen pendukung yang diperlukan."],
+  ["Pantau prosesnya", "Status pengerjaan dan kebutuhan tambahan diinformasikan secara berkala melalui WhatsApp."]
 ];
 const workflowEn = [
   ["Send document photos", "Start from WhatsApp. Photos are enough for an initial review and service estimate."],
@@ -686,9 +686,9 @@ const workflowEn = [
   ["Get process updates", "Status and additional requirements are shared through WhatsApp so they are easy to follow."]
 ];
 const testimonials = [
-  ["Rina P.", "Jakarta", "Dokumen pernikahan untuk luar negeri dibantu dari awal. Saya tinggal kirim foto dokumen dan langsung dijelaskan langkahnya."],
-  ["Andreas M.", "Tangerang", "Butuh apostille ijazah untuk kerja. Respon WhatsApp cepat, estimasi jelas, dan tidak dibuat bingung dengan istilah administrasi."],
-  ["Sofia L.", "Bekasi", "Terjemahan tersumpah dan legalisasi dokumen keluarga jadi lebih mudah karena alurnya dijelaskan satu per satu."]
+  ["R**** P.", "Jakarta", "Dokumen pernikahan untuk luar negeri dibantu dari awal. Saya tinggal kirim foto dokumen dan langsung dijelaskan langkahnya."],
+  ["A****** M.", "Tangerang", "Butuh apostille ijazah untuk kerja. Respons WhatsApp cepat, estimasi jelas, tidak dibuat bingung dengan istilah administrasi."],
+  ["S****** L.", "Bekasi", "Terjemahan tersumpah dan legalisasi dokumen keluarga jadi lebih mudah karena alurnya dijelaskan satu per satu."]
 ];
 const testimonialsEn = [
   ["Maria S.", "Jakarta", "The team reviewed my Indonesian marriage document quickly and explained what needed translation and apostille."],
@@ -748,7 +748,7 @@ function header(page) {
           </button>
         </div>
       </div>
-      <nav class="mobile-menu" aria-label="Menu mobile" data-mobile-menu>${links}<a href="${waUrl(page.defaultMessage)}">${page.lang === "en" ? "Free WhatsApp" : "WhatsApp Gratis"}</a></nav>
+      <nav class="mobile-menu" aria-label="Menu mobile" data-mobile-menu>${links}<a href="${waUrl(page.defaultMessage)}">${page.lang === "en" ? "WhatsApp Review" : "Konsultasi WhatsApp"}</a></nav>
     </header>`;
 }
 
@@ -799,12 +799,10 @@ function reviewForm(page, variant = "") {
   const isEn = page.lang === "en";
   return `
           <form class="${formClass}" data-wa-form>
-            <div class="deal-card" data-countdown>
-              <div>
-                <span>${isEn ? "Today only" : "Promo hari ini"}</span>
-                <strong>${isEn ? "Claim 10% discount via WhatsApp" : "Klaim diskon 10% via WhatsApp"}</strong>
-              </div>
-              <b data-countdown-value>14:59</b>
+            <div class="review-benefits">
+              <span><strong>${isEn ? "Fast response" : "Respons cepat"}</strong>${isEn ? "Team active on business days" : "Tim aktif setiap hari kerja"}</span>
+              <span><strong>${isEn ? "Complimentary review" : "Review gratis"}</strong>${isEn ? "Consult before sending originals" : "Konsultasi sebelum dokumen asli dikirim"}</span>
+              <span><strong>${isEn ? "Trusted" : "Dipercaya"}</strong>${isEn ? "Hundreds of client documents processed" : "Ratusan dokumen klien telah diproses"}</span>
             </div>
             <div class="field">
               <label for="name">${isEn ? "Name" : "Nama"}</label>
@@ -828,15 +826,15 @@ function reviewForm(page, variant = "") {
               <label for="need">${isEn ? "Notes" : "Catatan"}</label>
               <textarea id="need" name="need" placeholder="${isEn ? "Destination country, deadline, or document purpose" : "Negara tujuan, deadline, atau kebutuhan Anda"}"></textarea>
             </div>
-            <button class="button whatsapp" type="submit">${isEn ? "Open WhatsApp for free review" : "Buka WhatsApp untuk review gratis"}</button>
+            <button class="button whatsapp" type="submit">${isEn ? "Continue to WhatsApp review" : "Lanjutkan review via WhatsApp"}</button>
           </form>`;
 }
 
 function hero(page) {
   const isEn = page.lang === "en";
   const trustBadges = isEn
-    ? ["Free consultation", "Document review first", "Mobile friendly", "WhatsApp updates"]
-    : ["Free konsultasi", "Review dokumen dulu", "Mobile friendly", "Update via WhatsApp"];
+    ? ["Complimentary first consultation", "Documents reviewed before processing", "WhatsApp status updates", "Individuals and corporate clients"]
+    : ["Konsultasi awal tanpa biaya", "Dokumen direview sebelum proses dimulai", "Update status melalui WhatsApp", "Melayani individu & korporat"];
   return `
     <section class="hero">
       <div class="container hero-grid">
@@ -854,26 +852,26 @@ function hero(page) {
         </div>
         <aside class="hero-form-card" aria-label="Form review dokumen gratis">
           <span class="kicker">${isEn ? "Document review form" : "Form review dokumen"}</span>
-          <h2>${isEn ? "Start with a free document check." : "Mulai dari cek dokumen gratis."}</h2>
-          <p>${isEn ? "Fill this in briefly and WhatsApp will open with a clean message format so the team can review your document faster." : "Isi singkat, lalu WhatsApp akan terbuka dengan format pesan yang rapi. Tim bisa langsung memahami dokumen dan tujuan Anda."}</p>
+          <h2>${isEn ? "Check your document needs at no cost." : "Cek kebutuhan dokumen Anda — tanpa biaya."}</h2>
+          <p>${isEn ? "Fill this in briefly and WhatsApp will open with a clean message format so the team can understand your document and destination." : "Isi data singkat di bawah, lalu lanjutkan ke WhatsApp dengan pesan yang sudah tersusun rapi. Tim kami akan langsung memahami dokumen dan tujuan Anda."}</p>
           ${reviewForm(page, "quote-form-light")}
         </aside>
       </div>
       <div class="container hero-proof">
         <div class="proof-pill">
-          <strong>5.0</strong>
-          <span>★★★★★</span>
-          <em>${isEn ? "Trusted by hundreds of satisfied clients" : "Dipercaya ratusan customer puas"}</em>
+          <strong>${isEn ? "Fast" : "Cepat"}</strong>
+          <span>${isEn ? "Response" : "Respons"}</span>
+          <em>${isEn ? "Initial guidance through WhatsApp" : "Arahan awal melalui WhatsApp"}</em>
         </div>
         <div class="proof-pill">
-          <strong>10%</strong>
-          <span>${isEn ? "Flash discount" : "Flash diskon"}</span>
-          <em>${isEn ? "Claim during WhatsApp review" : "Klaim saat review dokumen via WhatsApp"}</em>
+          <strong>${isEn ? "Free" : "Gratis"}</strong>
+          <span>${isEn ? "Review" : "Review"}</span>
+          <em>${isEn ? "Consult before sending originals" : "Konsultasi sebelum dokumen asli dikirim"}</em>
         </div>
         <div class="proof-pill">
-          <strong>Free</strong>
-          <span>${isEn ? "Document review" : "Review dokumen"}</span>
-          <em>${isEn ? "Consult before sending originals" : "Konsultasi sebelum kirim dokumen asli"}</em>
+          <strong>${isEn ? "Trusted" : "Dipercaya"}</strong>
+          <span>${isEn ? "Clients" : "Klien"}</span>
+          <em>${isEn ? "For personal and corporate documents" : "Untuk dokumen pribadi dan korporat"}</em>
         </div>
       </div>
     </section>`;
@@ -885,9 +883,9 @@ function appPreview(page) {
     <section class="section app-preview">
       <div class="container app-preview-grid">
         <div class="section-head">
-          <span class="kicker">${isEn ? "Mobile flow" : "Alur mobile"}</span>
-          <h2>${isEn ? "Simple like an app, handled by a real document team." : "Ringkas seperti memakai aplikasi, tetap ditangani oleh tim manusia."}</h2>
-          <p>${isEn ? "This preview shows the GOApostille flow: document review, service mapping, and status updates through WhatsApp." : "Preview ini menunjukkan alur kerja GOApostille: dokumen dicek, kebutuhan layanan dipetakan, lalu update proses tetap mudah dipantau lewat WhatsApp."}</p>
+          <span class="kicker">${isEn ? "Expert workflow" : "Alur tim ahli"}</span>
+          <h2>${isEn ? "Simple to follow, reviewed by a real document team." : "Tetap sederhana, tetap ditangani tim ahli."}</h2>
+          <p>${isEn ? "Every submitted document is checked by the team, not an automated system. You can follow each stage through WhatsApp." : "Setiap dokumen yang masuk dicek satu per satu oleh tim kami — bukan sistem otomatis. Anda bisa memantau setiap tahap prosesnya langsung melalui WhatsApp, dari review awal hingga dokumen siap digunakan."}</p>
         </div>
         ${phoneMockup(page)}
       </div>
@@ -971,15 +969,15 @@ function conversionProof(page) {
       <div class="container">
         <div class="section-head center">
           <span class="kicker">${isEn ? "Social proof" : "Social proof"}</span>
-          <h2>${isEn ? "More confidence before you send important documents." : "Lebih yakin sebelum mengirim dokumen penting."}</h2>
-          <p>${isEn ? "Review the route first, claim today's WhatsApp promo, and check service coverage before continuing." : "Cek jalur layanan lebih dulu, klaim promo WhatsApp hari ini, dan pastikan dokumen Anda ditangani dengan alur yang jelas."}</p>
+          <h2>${isEn ? "Make sure your important documents are handled properly." : "Pastikan dokumen penting Anda ditangani dengan tepat."}</h2>
+          <p>${isEn ? "Check the right service route first, then continue with a clear flow from the first consultation." : "Cek jalur layanan yang sesuai, dan pastikan dokumen Anda diproses dengan alur yang jelas sejak konsultasi awal."}</p>
         </div>
         <div class="proof-grid">
           <article class="review-badge">
-            <span class="badge-label">${isEn ? "Google-style review badge" : "Badge review Google-style"}</span>
-            <strong>5.0 ★★★★★</strong>
-            <p>${isEn ? "Hundreds of satisfied clients have trusted apostille, legalization, and sworn translation assistance." : "Ratusan customer puas telah mempercayakan bantuan apostille, legalisasi, dan penerjemah tersumpah."}</p>
-            <a class="button secondary" href="${waUrl(isEn ? "Hello GOApostille, I want to claim the 10% WhatsApp promo and review my document." : "Halo GOApostille, saya ingin klaim promo 10% dan review dokumen gratis.")}">${isEn ? "Claim promo on WhatsApp" : "Klaim promo di WhatsApp"}</a>
+            <span class="badge-label">${isEn ? "Client confidence" : "Kepercayaan klien"}</span>
+            <strong>${isEn ? "Hundreds of documents assisted" : "Ratusan dokumen telah dibantu"}</strong>
+            <p>${isEn ? "Individual and corporate clients have trusted apostille, legalization, and sworn translation assistance through a clear WhatsApp-guided flow." : "Ratusan klien — individu maupun korporat — telah mempercayakan dokumen apostille, legalisasi, dan penerjemahan tersumpah kepada kami."}</p>
+            <a class="button secondary" href="${waUrl(isEn ? "Hello GOApostille, I would like a WhatsApp consultation for my document." : "Halo GOApostille, saya ingin konsultasi via WhatsApp untuk dokumen saya.")}">${isEn ? "Consult on WhatsApp" : "Konsultasi via WhatsApp"}</a>
           </article>
           <article class="maps-card">
             <span class="badge-label">${isEn ? "Service area" : "Area layanan"}</span>
@@ -1014,8 +1012,8 @@ function processSection(page) {
       <div class="container">
         <div class="section-head">
           <span class="kicker">${isEn ? "Quick process" : "Alur cepat"}</span>
-          <h2>${isEn ? "From first review to documents ready for overseas use." : "Dari konsultasi awal sampai dokumen siap dipakai."}</h2>
-          <p>${isEn ? "You do not need to guess the right route. The team reviews your document type, destination country, and service needs." : "Anda tidak perlu menebak harus mulai dari mana. Tim akan membantu membaca kebutuhan dokumen berdasarkan negara tujuan dan jenis layanan."}</p>
+          <h2>${isEn ? "Four clear steps from first review to process updates." : "Empat langkah jelas dari review awal sampai proses berjalan."}</h2>
+          <p>${isEn ? "You do not need to guess the right route. The team reviews your document type, destination country, and service needs before originals are sent." : "Anda tidak perlu menebak harus mulai dari mana. Tim akan membaca kebutuhan dokumen berdasarkan negara tujuan, jenis layanan, dan dokumen pendukung yang diperlukan."}</p>
         </div>
         <div class="workflow">${cards}</div>
       </div>
@@ -1045,17 +1043,17 @@ function cta(page) {
       <div class="container">
         <div class="cta-panel cta-panel-simple">
           <div>
-            <span class="kicker">${isEn ? "Free document review" : "Free review dokumen"}</span>
-            <h2>${isEn ? "Not sure which route is right? Send the document first." : "Masih ragu jalurnya? Kirim dulu dokumennya."}</h2>
-            <p>${isEn ? "The team can check whether your document needs apostille, legalization, sworn translation, or a combination of services." : "Tim akan membantu mengecek apakah dokumen Anda perlu apostille, legalisasi, penerjemah tersumpah, atau kombinasi beberapa layanan."}</p>
+            <span class="kicker">${isEn ? "Document consultation" : "Konsultasi dokumen"}</span>
+            <h2>${isEn ? "Not sure where to start? Send your document first." : "Belum yakin harus mulai dari mana?"}</h2>
+            <p>${isEn ? "Send your document first. The team can help determine whether you need apostille, legalization, sworn translation, or a combination of services." : "Kirim dokumen Anda lebih dulu. Tim kami akan membantu menentukan apakah Anda memerlukan apostille, legalisasi, penerjemah tersumpah, atau kombinasi dari ketiganya."}</p>
             <div class="hero-actions">
               <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">${isEn ? "Chat on WhatsApp" : "Chat langsung WhatsApp"}</a>
               <a class="button secondary" href="tel:+62817322271">${isEn ? "Call 0817-322-271" : "Telepon 0817-322-271"}</a>
             </div>
           </div>
           <div class="cta-note">
-            <strong>${isEn ? "Fast response via WhatsApp" : "Respon cepat via WhatsApp"}</strong>
-            <span>${isEn ? "Prepare document photos, destination country, and deadline if any." : "Siapkan foto dokumen, negara tujuan, dan deadline bila ada."}</span>
+            <strong>${isEn ? "Fast response during business hours" : "Respons cepat di jam kerja"}</strong>
+            <span>${isEn ? "Prepare document photos, destination country, and deadline if any." : "Siapkan foto dokumen, negara tujuan, dan tenggat waktu jika ada."}</span>
           </div>
         </div>
       </div>
@@ -1093,7 +1091,7 @@ function footer(page) {
       <div class="container footer-grid">
         <div>
           <h3>GOApostille.com</h3>
-          <p>${isEn ? "A mobile-first platform for apostille, document legalization, and sworn translation. Start with a free WhatsApp document review." : "Platform mobile-first untuk apostille, legalisasi dokumen, dan penerjemah tersumpah. Mulai dari review dokumen gratis via WhatsApp."}</p>
+          <p>${isEn ? "A professional document desk for apostille, document legalization, and sworn translation. Start with a WhatsApp document review." : "Platform layanan dokumen lintas negara untuk apostille, legalisasi dokumen, dan penerjemah tersumpah. Mulai dari review dokumen via WhatsApp."}</p>
         </div>
         <div>
           <strong>${isEn ? "Services" : "Layanan"}</strong>
@@ -1220,7 +1218,7 @@ function html(page) {
       <span class="proof-toast-icon">${iconSvg("chat")}</span>
       <span>
         <strong data-proof-name>Fat***</strong>
-        <small data-proof-action>baru klaim review dokumen gratis</small>
+        <small data-proof-action>baru mengirim dokumen untuk review</small>
       </span>
     </div>
     <nav class="bottom-nav" aria-label="${page.lang === "en" ? "Mobile quick navigation" : "Navigasi cepat mobile"}">
@@ -1232,8 +1230,8 @@ function html(page) {
     <a class="mobile-wa" href="${waUrl(page.defaultMessage)}">
       <span class="icon">WA</span>
       <span>
-        <strong>${page.lang === "en" ? "Free Document Review" : "Free Review Dokumen"}</strong>
-        <span>${page.lang === "en" ? "Free WhatsApp consultation" : "Free konsultasi via WhatsApp"}</span>
+        <strong>${page.lang === "en" ? "Document Review" : "Review Dokumen Gratis"}</strong>
+        <span>${page.lang === "en" ? "WhatsApp consultation" : "Konsultasi gratis via WhatsApp"}</span>
       </span>
     </a>
     <script src="/app.js" defer></script>

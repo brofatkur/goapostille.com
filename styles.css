@@ -23,10 +23,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(0, 184, 217, 0.2), transparent 32rem),
@@ -303,6 +305,7 @@ h1 {
 }
 
 .micro-trust li {
+  max-width: 100%;
   padding: 8px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -918,44 +921,43 @@ h2 {
   width: 100%;
 }
 
-.deal-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+.review-benefits {
+  display: grid;
+  gap: 8px;
   margin-bottom: 14px;
-  padding: 12px 14px;
-  border: 1px solid rgba(255, 138, 0, 0.28);
+  padding: 12px;
+  border: 1px solid rgba(11, 99, 246, 0.14);
   border-radius: 18px;
-  background: linear-gradient(135deg, #fff7ec, #ffffff);
+  background: linear-gradient(135deg, var(--blue-3), #ffffff);
 }
 
-.deal-card span,
-.deal-card strong {
+.review-benefits span,
+.review-benefits strong {
   display: block;
 }
 
-.deal-card span {
-  color: #94510a;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.review-benefits span {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
 }
 
-.deal-card strong {
+.review-benefits span::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--green);
+}
+
+.review-benefits strong {
   color: var(--navy);
   line-height: 1.2;
-}
-
-.deal-card b {
-  min-width: 66px;
-  padding: 8px 10px;
-  border-radius: 14px;
-  color: #fff;
-  background: var(--orange);
-  text-align: center;
-  font-size: 16px;
 }
 
 .field {
@@ -1322,6 +1324,27 @@ body.menu-open .mobile-menu {
     padding-top: 36px;
   }
 
+  .hero-grid > div:first-child {
+    max-width: calc(100vw - 48px);
+  }
+
+  .eyebrow {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 18px;
+    padding-left: 34px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .eyebrow .pulse {
+    position: absolute;
+    top: 13px;
+    left: 14px;
+  }
+
   .hero-form-card {
     padding: 18px;
     border-radius: 24px;
@@ -1329,11 +1352,27 @@ body.menu-open .mobile-menu {
   }
 
   h1 {
-    font-size: 43px;
+    max-width: 330px;
+    font-size: 33px;
+    line-height: 1.07;
+    letter-spacing: -0.045em;
+  }
+
+  .lead {
+    max-width: 330px;
   }
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .micro-trust {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .micro-trust li {
+    width: fit-content;
   }
 
   .phone-screen {
@@ -1387,13 +1426,8 @@ body.menu-open .mobile-menu {
     padding: 20px;
   }
 
-  .deal-card {
-    align-items: flex-start;
-  }
-
-  .deal-card b {
-    min-width: 58px;
-    font-size: 14px;
+  .review-benefits {
+    padding: 10px;
   }
 
   .bottom-nav {
