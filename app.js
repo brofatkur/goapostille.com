@@ -6,6 +6,7 @@
   const proofToast = document.querySelector("[data-proof-toast]");
   const proofName = document.querySelector("[data-proof-name]");
   const proofAction = document.querySelector("[data-proof-action]");
+  const bottomNav = document.querySelector("[data-bottom-nav]");
   const phone = "62817322271";
 
   const serviceLabels = {
@@ -42,6 +43,20 @@
       if (toggle) toggle.setAttribute("aria-expanded", "false");
     });
   });
+
+  if (bottomNav) {
+    let ticking = false;
+    const syncBottomNav = () => {
+      bottomNav.classList.toggle("is-visible", window.scrollY > 180);
+      ticking = false;
+    };
+    syncBottomNav();
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(syncBottomNav);
+    }, { passive: true });
+  }
 
   document.querySelectorAll("[data-wa-message]").forEach((link) => {
     link.addEventListener("click", (event) => {

@@ -31,10 +31,10 @@ const pages = [
       "Platform terpercaya untuk jasa apostille, legalisasi dokumen, dan penerjemah tersumpah. Konsultasi awal dan review dokumen via WhatsApp.",
     keywords:
       "jasa apostille, apostille kemenkumham, legalisasi dokumen, penerjemah tersumpah jakarta, legalisasi buku nikah, apostille ijazah",
-    eyebrow: "Platform terpercaya untuk dokumen lintas negara",
-    h1: "Apostille, legalisasi, dan penerjemah tersumpah — diurus tim ahli, dipantau dari WhatsApp Anda.",
+    eyebrow: "Platform dokumen lintas negara",
+    h1: "Apostille, legalisasi, dan penerjemah tersumpah untuk kebutuhan luar negeri.",
     lead:
-      "Kirim foto dokumen dan sebutkan negara tujuan. Tim kami akan menentukan proses yang tepat — apostille, legalisasi, atau penerjemahan tersumpah — sebelum dokumen asli Anda dikirimkan.",
+      "Diurus tim ahli dan dipantau dari WhatsApp Anda. Kirim foto dokumen, sebutkan negara tujuan, lalu tim kami menentukan proses yang tepat sebelum dokumen asli dikirimkan.",
     primaryCta: "Konsultasi gratis via WhatsApp",
     secondaryCta: "Lihat layanan",
     defaultMessage:
@@ -1221,7 +1221,7 @@ function html(page) {
         <small data-proof-action>baru mengirim dokumen untuk review</small>
       </span>
     </div>
-    <nav class="bottom-nav" aria-label="${page.lang === "en" ? "Mobile quick navigation" : "Navigasi cepat mobile"}">
+    <nav class="bottom-nav" data-bottom-nav aria-label="${page.lang === "en" ? "Mobile quick navigation" : "Navigasi cepat mobile"}">
       <a href="/"><span>${iconSvg("apostille")}</span><strong>Home</strong></a>
       <a href="#layanan"><span>${iconSvg("shield")}</span><strong>${page.lang === "en" ? "Services" : "Layanan"}</strong></a>
       <a href="#review"><span>${iconSvg("map")}</span><strong>Review</strong></a>
