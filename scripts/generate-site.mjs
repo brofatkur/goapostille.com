@@ -5,6 +5,12 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = "https://www.goapostille.com";
 const phone = "62817322271";
+const officeAddress = {
+  company: "PT Mega Akses Antarbangsa",
+  line1: "AXA Tower 45th Floor",
+  line2: "Jl. Prof. Dr. Satrio Kav. 18",
+  line3: "Kuningan, Setiabudi, Jakarta 12940"
+};
 const alternateMap = {
   "/": "/en/",
   "/en/": "/",
@@ -703,6 +709,19 @@ function waUrl(message) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
+function iconSvg(type) {
+  const icons = {
+    marriage: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11a4 4 0 1 1 4-4 4 4 0 0 1-4 4Zm10 0a4 4 0 1 1 4-4 4 4 0 0 1-4 4ZM3.5 21a5.5 5.5 0 0 1 11 0M11.5 21a5.5 5.5 0 0 1 9-4.2"/></svg>',
+    education: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 8.5 9-4 9 4-9 4-9-4Z"/><path d="M7 11v4.5c2.8 2 7.2 2 10 0V11M21 9v7"/></svg>',
+    translation: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h10M9 5c-.2 4.8-2.2 8-5.5 10.5M6.5 9c1.1 2.4 3.1 4.5 5.8 6"/><path d="M13 19l3.5-8 3.5 8M14.3 16.5h4.4"/></svg>',
+    apostille: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7V3Z"/><path d="M15 3v5h5M9.5 14l1.8 1.8 4-4"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 2.8 8.4 7 10 4.2-1.6 7-5.5 7-10V6l-7-3Z"/><path d="m8.8 12 2.1 2.1 4.4-4.7"/></svg>',
+    map: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3Z"/><path d="M9 3v15M15 6v15"/></svg>',
+    chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg>'
+  };
+  return icons[type] || icons.apostille;
+}
+
 function header(page) {
   const navItems = page.lang === "en" ? navEn : nav;
   const links = navItems
@@ -714,7 +733,7 @@ function header(page) {
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/">
-          <span class="brand-mark">GO</span>
+          <span class="brand-mark">${iconSvg("apostille")}</span>
           <span>
             <span class="brand-title">GOApostille</span>
             <span class="brand-subtitle">Mobile document desk</span>
@@ -876,18 +895,23 @@ function appPreview(page) {
 }
 
 function services(page) {
+  const isEn = page.lang === "en";
   const cards = page.services
     .map(
-      (service) => `
-        <article class="card">
+      (service, index) => {
+        const iconTypes = ["marriage", "education", "translation"];
+        return `
+        <article class="card service-card">
+          <span class="service-icon">${iconSvg(iconTypes[index] || "apostille")}</span>
           <h3>${escapeHtml(service.title)}</h3>
           <p>${escapeHtml(service.text)}</p>
           ${
             service.href
-              ? `<a class="card-link" href="${service.href}">Buka layanan -&gt;</a>`
-              : `<a class="card-link" href="#konsultasi">Konsultasi -&gt;</a>`
+              ? `<a class="card-link" href="${service.href}">${isEn ? "Open service" : "Buka layanan"} -&gt;</a>`
+              : `<a class="card-link" href="#konsultasi">${isEn ? "Consult" : "Konsultasi"} -&gt;</a>`
           }
-        </article>`
+        </article>`;
+      }
     )
     .join("");
 
@@ -961,6 +985,10 @@ function conversionProof(page) {
             <span class="badge-label">${isEn ? "Service area" : "Area layanan"}</span>
             <h3>${isEn ? "Jakarta document desk, remote friendly." : "Document desk Jakarta, bisa mulai jarak jauh."}</h3>
             <p>${isEn ? "Start from WhatsApp from Jakarta, Jabodetabek, or overseas. The team will guide document delivery when originals are needed." : "Mulai dari WhatsApp untuk area Jakarta, Jabodetabek, maupun luar kota. Jika dokumen asli dibutuhkan, tim akan memberi arahan pengiriman."}</p>
+            <address class="office-mini">
+              <strong>${officeAddress.company}</strong>
+              <span>${officeAddress.line1}, ${officeAddress.line2}, ${officeAddress.line3}</span>
+            </address>
             <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Jakarta%20apostille%20service" target="_blank" rel="noopener">${isEn ? "Open Google Maps ->" : "Buka Google Maps ->"}</a>
           </article>
         </div>
@@ -1093,6 +1121,15 @@ function footer(page) {
             <a href="https://www.goapostille.com/">www.goapostille.com</a>
           </div>
         </div>
+        <div>
+          <strong>${isEn ? "Office" : "Alamat kantor"}</strong>
+          <address>
+            ${officeAddress.company}<br>
+            ${officeAddress.line1}<br>
+            ${officeAddress.line2}<br>
+            ${officeAddress.line3}
+          </address>
+        </div>
       </div>
     </footer>`;
 }
@@ -1105,6 +1142,14 @@ function schema(page) {
     url: urlFor(page.path),
     image: `${site}/favicon.svg`,
     telephone: "+62-817-322-271",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${officeAddress.line1}, ${officeAddress.line2}`,
+      addressLocality: "Jakarta",
+      addressRegion: "DKI Jakarta",
+      postalCode: "12940",
+      addressCountry: "ID"
+    },
     areaServed: ["Indonesia", "Jakarta"],
     brand: {
       "@type": "Brand",
@@ -1171,6 +1216,19 @@ function html(page) {
       ${faq(page)}
     </main>
     ${footer(page)}
+    <div class="proof-toast" data-proof-toast aria-live="polite">
+      <span class="proof-toast-icon">${iconSvg("chat")}</span>
+      <span>
+        <strong data-proof-name>Fat***</strong>
+        <small data-proof-action>baru klaim review dokumen gratis</small>
+      </span>
+    </div>
+    <nav class="bottom-nav" aria-label="${page.lang === "en" ? "Mobile quick navigation" : "Navigasi cepat mobile"}">
+      <a href="/"><span>${iconSvg("apostille")}</span><strong>Home</strong></a>
+      <a href="#layanan"><span>${iconSvg("shield")}</span><strong>${page.lang === "en" ? "Services" : "Layanan"}</strong></a>
+      <a href="#review"><span>${iconSvg("map")}</span><strong>Review</strong></a>
+      <a href="${waUrl(page.defaultMessage)}"><span>${iconSvg("chat")}</span><strong>WhatsApp</strong></a>
+    </nav>
     <a class="mobile-wa" href="${waUrl(page.defaultMessage)}">
       <span class="icon">WA</span>
       <span>

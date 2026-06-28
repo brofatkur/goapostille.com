@@ -4,6 +4,9 @@
   const menuLinks = document.querySelectorAll("[data-mobile-menu] a");
   const forms = document.querySelectorAll("[data-wa-form]");
   const countdowns = document.querySelectorAll("[data-countdown-value]");
+  const proofToast = document.querySelector("[data-proof-toast]");
+  const proofName = document.querySelector("[data-proof-name]");
+  const proofAction = document.querySelector("[data-proof-action]");
   const phone = "62817322271";
 
   const serviceLabels = {
@@ -18,6 +21,14 @@
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  const proofItems = [
+    ["Fat***", "baru klaim review dokumen gratis"],
+    ["Rin***", "baru konsultasi apostille ijazah"],
+    ["And***", "baru klaim diskon 10% via WhatsApp"],
+    ["Sof***", "baru cek dokumen pernikahan"],
+    ["Hen***", "baru tanya penerjemah tersumpah"]
+  ];
 
   if (toggle) {
     toggle.addEventListener("click", () => {
@@ -57,6 +68,29 @@
   if (countdowns.length) {
     updateCountdowns();
     window.setInterval(updateCountdowns, 60000);
+  }
+
+  if (proofToast && proofName && proofAction) {
+    let proofIndex = 0;
+    const showProof = () => {
+      const [name, action] = proofItems[proofIndex % proofItems.length];
+      proofName.textContent = name;
+      proofAction.textContent = action;
+      proofToast.classList.add("is-visible");
+      window.setTimeout(() => proofToast.classList.remove("is-visible"), 4600);
+      proofIndex += 1;
+    };
+
+    const startProof = () => {
+      window.setTimeout(showProof, 2600);
+      window.setInterval(showProof, 11500);
+    };
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(startProof, { timeout: 5000 });
+    } else {
+      window.addEventListener("load", startProof, { once: true });
+    }
   }
 
   forms.forEach((form) => {
