@@ -23,11 +23,11 @@
   };
 
   const proofItems = [
-    ["Fat***", "baru mengirim dokumen untuk review"],
+    ["Fat***", "baru mengirim dokumen untuk pemeriksaan awal"],
     ["Rin***", "baru konsultasi apostille ijazah"],
-    ["And***", "baru cek jalur legalisasi dokumen"],
-    ["Sof***", "baru cek dokumen pernikahan"],
-    ["Hen***", "baru tanya penerjemah tersumpah"]
+    ["And***", "baru memeriksa jalur legalisasi dokumen"],
+    ["Sof***", "baru memeriksa dokumen pernikahan"],
+    ["Hen***", "baru konsultasi penerjemah tersumpah"]
   ];
 
   if (toggle) {
@@ -97,10 +97,10 @@
       const name = data.get("name") || "Calon klien";
       const service = serviceLabels[data.get("service")] || data.get("service") || "Apostille dokumen";
       const documentType = data.get("document") || "Belum disebutkan";
-      const need = data.get("need") || "Saya ingin review dokumen gratis.";
+      const need = data.get("need") || "Saya ingin pemeriksaan awal dokumen.";
       const message = [
         "Halo GOApostille, saya mau konsultasi.",
-        "Saya ingin review dokumen sebelum proses dimulai.",
+        "Saya ingin pemeriksaan awal dokumen sebelum proses dimulai.",
         `Nama: ${name}`,
         `Layanan: ${service}`,
         `Jenis dokumen: ${documentType}`,
