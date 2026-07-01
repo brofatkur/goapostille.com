@@ -47,27 +47,63 @@ const pages = [
       ["Dokumen diperiksa", "sebelum proses"],
       ["WhatsApp", "pembaruan status"]
     ],
-    servicesTitle: "Pilih layanan sesuai tujuan dokumen",
+    servicesTitle: "Solusi Lengkap Dokumen Resmi Internasional Anda",
     servicesLead:
-      "Baik untuk keperluan pribadi, pendidikan, pernikahan, maupun bisnis — tim kami membantu memastikan dokumen Anda diproses lewat jalur yang tepat sebelum dikirim.",
+      "Dari penerjemahan tersumpah hingga apostille, legalisasi Kemenlu, dan legalisasi kedutaan. Semua ditangani tim profesional berpengalaman dengan alur yang jelas sejak pemeriksaan awal.",
     services: [
       {
-        title: "Apostille Dokumen Pernikahan",
+        title: "Penerjemah Tersumpah",
         text:
-          "Pengesahan buku nikah, akta nikah, dan surat nikah untuk keperluan di luar negeri — termasuk pernikahan campur, pengajuan visa pasangan, dan administrasi internasional.",
-        href: "/apostille-dokumen-pernikahan/"
+          "Terjemahan dokumen resmi oleh penerjemah tersumpah yang diakui pemerintah. Tersedia untuk dokumen pribadi, pendidikan, bisnis, dan kebutuhan imigrasi dalam lebih dari 25 bahasa.",
+        href: "/jasa-penerjemah-tersumpah/",
+        badge: "25+ Bahasa",
+        icon: "translation",
+        cta: "Jasa penerjemah tersumpah"
       },
       {
-        title: "Apostille Dokumen Pendidikan",
+        title: "Apostille Kemenkumham",
         text:
-          "Pengesahan ijazah, transkrip akademik, dan diploma — mulai dari jenjang SMA hingga gelar sarjana — untuk studi lanjut, kerja, maupun migrasi ke luar negeri.",
-        href: "/apostille-dokumen-pendidikan/"
+          "Pengesahan dokumen sesuai Konvensi Hague 1961 untuk penggunaan di negara anggota apostille. Cocok untuk dokumen pernikahan, pendidikan, perusahaan, dan administrasi luar negeri.",
+        href: "/apostille-dokumen-pernikahan/",
+        badge: "Paling Populer",
+        icon: "apostille",
+        cta: "Apostille dokumen pernikahan"
       },
       {
-        title: "Jasa Penerjemah Tersumpah",
+        title: "Legalisasi Kemenlu",
         text:
-          "Penerjemahan resmi untuk ijazah, paspor, akta lahir, dan kontrak kerja oleh penerjemah tersumpah terdaftar — mendukung kebutuhan visa, beasiswa, imigrasi, dan pernikahan di luar negeri.",
-        href: "/jasa-penerjemah-tersumpah/"
+          "Legalisasi resmi Kementerian Luar Negeri RI untuk dokumen yang akan digunakan di luar negeri, terutama jika negara tujuan belum menerima apostille.",
+        href: "#konsultasi",
+        badge: "Resmi Pemerintah",
+        icon: "globe",
+        cta: "Konsultasi legalisasi"
+      },
+      {
+        title: "Legalisasi Kedutaan",
+        text:
+          "Pengurusan legalisasi di kedutaan besar dan konsulat negara tujuan di Jakarta. Tim membantu menyesuaikan persyaratan agar Anda tidak perlu mengurus antrean sendiri.",
+        href: "#konsultasi",
+        badge: "50+ Negara",
+        icon: "building",
+        cta: "Cek syarat kedutaan"
+      },
+      {
+        title: "Dokumen Pendidikan",
+        text:
+          "Ijazah, transkrip nilai, diploma, dan sertifikat akademik untuk beasiswa, kuliah, kerja, penyetaraan, maupun migrasi ke luar negeri.",
+        href: "/apostille-dokumen-pendidikan/",
+        badge: "Beasiswa & Studi",
+        icon: "education",
+        cta: "Apostille dokumen pendidikan"
+      },
+      {
+        title: "Layanan Express",
+        text:
+          "Untuk kebutuhan dengan tenggat ketat, tim dapat memeriksa opsi layanan prioritas 1-2 hari kerja sesuai jenis dokumen, antrean instansi, dan negara tujuan.",
+        href: "#konsultasi",
+        badge: "1-2 Hari Kerja",
+        icon: "bolt",
+        cta: "Cek layanan express"
       }
     ],
     trustTitle: "Mengapa prosesnya terasa lebih mudah?",
@@ -376,27 +412,63 @@ const pages = [
       ["Remote", "initial review"],
       ["Clear", "next steps"]
     ],
-    servicesTitle: "Services for overseas document use",
+    servicesTitle: "Complete Support for Official International Documents",
     servicesLead:
-      "These pages help international clients understand Indonesia apostille, marriage document apostille, education document apostille, and sworn translation needs.",
+      "From sworn translation to apostille, Ministry legalization, and embassy legalization. GOApostille helps you understand the right route before the original documents are sent.",
     services: [
-      {
-        title: "Marriage Document Apostille",
-        text:
-          "For buku nikah, marriage certificate, marriage document apostille, and legalization needs for spouse visa or civil registration overseas.",
-        href: "/en/marriage-document-apostille/"
-      },
-      {
-        title: "Education Document Apostille",
-        text:
-          "For diploma apostille, degree certificate apostille, academic transcript apostille, and education document legalization.",
-        href: "/en/education-document-apostille/"
-      },
       {
         title: "Sworn Translation",
         text:
-          "For Indonesian documents that need official translation before apostille, embassy legalization, visa, immigration, study, or business use.",
-        href: "/jasa-penerjemah-tersumpah/"
+          "Official sworn translation for personal, academic, corporate, immigration, and visa documents. Available for more than 25 languages depending on document type and deadline.",
+        href: "/en/sworn-translator-jakarta/",
+        badge: "25+ Languages",
+        icon: "translation",
+        cta: "Sworn translator service"
+      },
+      {
+        title: "Apostille Service",
+        text:
+          "Apostille support for Indonesia-issued documents under the Hague Apostille Convention, including marriage, education, corporate, and civil documents.",
+        href: "/en/marriage-document-apostille/",
+        badge: "Most Requested",
+        icon: "apostille",
+        cta: "Marriage document apostille"
+      },
+      {
+        title: "Ministry Legalization",
+        text:
+          "Official legalization route through Indonesian ministries for documents used in countries or institutions that still require conventional legalization.",
+        href: "#konsultasi",
+        badge: "Government Route",
+        icon: "globe",
+        cta: "Consult legalization"
+      },
+      {
+        title: "Embassy Legalization",
+        text:
+          "Assistance with embassy and consulate legalization in Jakarta, adjusted to the destination country requirements so clients do not have to manage the queue alone.",
+        href: "#konsultasi",
+        badge: "50+ Countries",
+        icon: "building",
+        cta: "Check embassy route"
+      },
+      {
+        title: "Education Documents",
+        text:
+          "Apostille and legalization support for diplomas, academic transcripts, degree certificates, and school records for study, work, scholarship, or migration purposes.",
+        href: "/en/education-document-apostille/",
+        badge: "Study & Scholarship",
+        icon: "education",
+        cta: "Education document apostille"
+      },
+      {
+        title: "Express Handling",
+        text:
+          "For urgent deadlines, the team can review priority options within 1-2 working days depending on document type, queue availability, and destination requirements.",
+        href: "#konsultasi",
+        badge: "1-2 Working Days",
+        icon: "bolt",
+        cta: "Ask about express service"
       }
     ],
     trustTitle: "Designed for clients who need clear guidance",
@@ -717,6 +789,9 @@ function iconSvg(type) {
     translation: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h8a3 3 0 0 1 3 3v2"/><path d="M5 4v11a3 3 0 0 0 3 3h3"/><path d="M8 8h5M8 11h3"/><path d="m14 20 3.5-8 3.5 8M15.2 17.2h4.6"/></svg>',
     apostille: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7V3Z"/><path d="M14 3v5h4"/><path d="m9.4 14 1.8 1.9 4-4.3"/><path d="M9 19h6"/></svg>',
     shield: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5.5 6.2v4.9c0 4.2 2.6 7.8 6.5 9.4 3.9-1.6 6.5-5.2 6.5-9.4V6.2L12 3.5Z"/><path d="m8.8 12 2.1 2.1 4.4-4.7"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3c2.2 2.3 3.3 5.3 3.3 9S14.2 18.7 12 21c-2.2-2.3-3.3-5.3-3.3-9S9.8 5.3 12 3Z"/></svg>',
+    building: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 20.5h15"/><path d="M6 20.5V7l6-3.5L18 7v13.5"/><path d="M9 9h1M14 9h1M9 13h1M14 13h1M10 20.5v-3h4v3"/></svg>',
+    bolt: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.8 5.8 13h5.4L10 21.2 18.2 10h-5.7L13 2.8Z"/></svg>',
     map: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.2 6-11a6 6 0 0 0-12 0c0 5.8 6 11 6 11Z"/><path d="M12 12.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z"/></svg>',
     chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10.5H9.2L5 19.5V5Z"/><path d="M8.5 9h7M8.5 12h4.8"/></svg>',
     check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7.3"/></svg>'
@@ -762,7 +837,7 @@ function phoneMockup(page) {
     .map(
       (service, index) => `
         <div class="service-mini">
-          <span class="mini-icon">${iconSvg(iconTypes[index] || "check")}</span>
+          <span class="mini-icon">${iconSvg(service.icon || iconTypes[index] || "check")}</span>
           <span>
             <strong>${escapeHtml(service.title)}</strong>
             <span>${escapeHtml(service.text.slice(0, 78))}...</span>
@@ -900,14 +975,19 @@ function services(page) {
     .map(
       (service, index) => {
         const iconTypes = ["marriage", "education", "translation"];
+        const icon = service.icon || iconTypes[index] || "apostille";
+        const cta = service.cta || (isEn ? "Open service" : "Buka layanan");
         return `
         <article class="card service-card">
-          <span class="service-icon">${iconSvg(iconTypes[index] || "apostille")}</span>
-          <h3>${escapeHtml(service.title)}</h3>
+          <div class="service-card-head">
+            <span class="service-icon">${iconSvg(icon)}</span>
+            <h3>${escapeHtml(service.title)}</h3>
+          </div>
+          ${service.badge ? `<span class="service-badge">${escapeHtml(service.badge)}</span>` : ""}
           <p>${escapeHtml(service.text)}</p>
           ${
             service.href
-              ? `<a class="card-link" href="${service.href}">${isEn ? "Open service" : "Buka layanan"} -&gt;</a>`
+              ? `<a class="card-link" href="${service.href}">${escapeHtml(cta)} -&gt;</a>`
               : `<a class="card-link" href="#konsultasi">${isEn ? "Consult" : "Konsultasi"} -&gt;</a>`
           }
         </article>`;
@@ -919,7 +999,7 @@ function services(page) {
     <section class="section" id="layanan">
       <div class="container">
         <div class="section-head">
-          <span class="kicker">${isEn ? "Main services" : "Layanan utama"}</span>
+          <span class="kicker">${isEn ? "Our Services" : "Layanan Kami"}</span>
           <h2>${escapeHtml(page.servicesTitle)}</h2>
           <p>${escapeHtml(page.servicesLead)}</p>
         </div>
