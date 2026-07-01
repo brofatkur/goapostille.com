@@ -912,6 +912,12 @@ function hero(page) {
   const trustBadges = isEn
     ? ["Initial consultation at no cost", "Documents reviewed before processing", "WhatsApp status updates", "Individuals and corporate clients"]
     : ["Konsultasi awal tanpa biaya", "Dokumen diperiksa sebelum proses dimulai", "Pembaruan status melalui WhatsApp", "Melayani individu & korporat"];
+  const authorityBadges = isEn
+    ? ["Aligned with ISO 9001:2015", "Registered with Ministry of Foreign Affairs", "Ministry of Law and Human Rights decree", "Registered with foreign embassies"]
+    : ["Sesuai ISO 9001:2015", "Terdaftar Kemenlu", "SK Kemenkum RI", "Terdaftar Kedutaan Asing"];
+  const authorityItems = authorityBadges
+    .map((item) => `<li><span>${iconSvg("shield")}</span>${escapeHtml(item)}</li>`)
+    .join("");
   return `
     <section class="hero">
       <div class="container hero-grid">
@@ -950,6 +956,9 @@ function hero(page) {
           <span>${isEn ? "Clients" : "Klien"}</span>
           <em>${isEn ? "For personal and corporate documents" : "Untuk dokumen pribadi dan korporat"}</em>
         </div>
+      </div>
+      <div class="container authority-badges" aria-label="${isEn ? "Authority badges" : "Badge kepercayaan"}">
+        <ul>${authorityItems}</ul>
       </div>
     </section>`;
 }
