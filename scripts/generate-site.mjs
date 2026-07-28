@@ -4,7 +4,21 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = "https://www.goapostille.com";
-const phone = "62817322271";
+const adminPrimary = {
+  labelId: "Admin 1 (Utama)",
+  labelEn: "Admin 1 (Primary)",
+  display: "0819-5626-777",
+  tel: "+628195626777",
+  wa: "628195626777"
+};
+const adminSecondary = {
+  labelId: "Admin 2",
+  labelEn: "Admin 2",
+  display: "0817-322-271",
+  tel: "+62817322271",
+  wa: "62817322271"
+};
+const phone = adminPrimary.wa;
 const googleMapsUrl = "https://maps.app.goo.gl/btEvU1e3E68aQQLs8";
 const officeAddress = {
   company: "PT Mega Akses Antarbangsa",
@@ -818,7 +832,7 @@ function header(page) {
         </a>
         <nav class="desktop-nav" aria-label="Navigasi utama">${links}</nav>
         <div class="nav-actions">
-          <a class="button secondary" href="tel:+62817322271">0817-322-271</a>
+          <a class="button secondary" href="tel:${adminPrimary.tel}">${adminPrimary.display}</a>
           <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">WhatsApp</a>
           <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" data-menu-toggle>
             <span></span><span></span><span></span>
@@ -1140,7 +1154,7 @@ function cta(page) {
             <p>${isEn ? "Send your document first. The team can help determine whether you need apostille, legalization, sworn translation, or a combination of services." : "Kirim dokumen Anda terlebih dahulu. Tim kami akan membantu menentukan apakah Anda memerlukan apostille, legalisasi, penerjemah tersumpah, atau kombinasi dari ketiganya."}</p>
             <div class="hero-actions">
               <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">${isEn ? "Consult on WhatsApp" : "Konsultasi via WhatsApp"}</a>
-              <a class="button secondary" href="tel:+62817322271">${isEn ? "Call 0817-322-271" : "Telepon 0817-322-271"}</a>
+              <a class="button secondary" href="tel:${adminPrimary.tel}">${isEn ? `Call ${adminPrimary.display}` : `Telepon ${adminPrimary.display}`}</a>
             </div>
           </div>
           <div class="cta-note">
@@ -1206,8 +1220,15 @@ function footer(page) {
         <div>
           <strong>${isEn ? "Contact" : "Kontak"}</strong>
           <div class="footer-links">
-            <a href="tel:+62817322271">0817-322-271</a>
-            <a href="${waUrl(isEn ? "Hello GOApostille, I would like a document consultation." : "Halo GOApostille, saya ingin konsultasi dokumen.")}">WhatsApp</a>
+            <a class="footer-contact" href="tel:${adminPrimary.tel}">
+              <span>${isEn ? adminPrimary.labelEn : adminPrimary.labelId}</span>
+              <strong>${adminPrimary.display}</strong>
+            </a>
+            <a class="footer-contact" href="tel:${adminSecondary.tel}">
+              <span>${isEn ? adminSecondary.labelEn : adminSecondary.labelId}</span>
+              <strong>${adminSecondary.display}</strong>
+            </a>
+            <a href="${waUrl(isEn ? "Hello GOApostille, I would like a document consultation." : "Halo GOApostille, saya ingin konsultasi dokumen.")}">${isEn ? "WhatsApp Admin 1" : "WhatsApp Admin 1"}</a>
             <a href="https://www.goapostille.com/">www.goapostille.com</a>
           </div>
         </div>
@@ -1231,7 +1252,23 @@ function schema(page) {
     name: page.title,
     url: urlFor(page.path),
     image: `${site}/favicon.svg`,
-    telephone: "+62-817-322-271",
+    telephone: adminPrimary.tel,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        name: "Admin 1",
+        telephone: adminPrimary.tel,
+        contactType: "customer service",
+        availableLanguage: ["Indonesian", "English"]
+      },
+      {
+        "@type": "ContactPoint",
+        name: "Admin 2",
+        telephone: adminSecondary.tel,
+        contactType: "customer service",
+        availableLanguage: ["Indonesian", "English"]
+      }
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: `${officeAddress.line1}, ${officeAddress.line2}`,

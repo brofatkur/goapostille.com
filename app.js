@@ -7,7 +7,7 @@
   const proofName = document.querySelector("[data-proof-name]");
   const proofAction = document.querySelector("[data-proof-action]");
   const bottomNav = document.querySelector("[data-bottom-nav]");
-  const phone = "62817322271";
+  const phone = "628195626777";
 
   const serviceLabels = {
     apostille: "Apostille dokumen",
