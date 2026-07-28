@@ -4,6 +4,8 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const site = "https://www.goapostille.com";
+const assetVer = "20260728_v3";
+
 const adminPrimary = {
   labelId: "Admin 1 (Utama)",
   labelEn: "Admin 1 (Primary)",
@@ -897,8 +899,8 @@ function header(page) {
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="/">
-          <span class="brand-mark">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+          <span class="brand-mark" style="background: linear-gradient(135deg, #00c4ee 0%, #0077b6 100%) !important;">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="stroke: #ffffff !important;">
               <path d="M7 3h7l4 4v14H7V3Z"/>
               <path d="M14 3v5h4"/>
               <path d="m9.4 14 1.8 1.9 4-4.3"/>
@@ -906,7 +908,7 @@ function header(page) {
             </svg>
           </span>
           <div class="brand-text">
-            <span class="brand-title">GO<span>Apostille</span></span>
+            <span class="brand-title">GO<span style="color: #00b4d8 !important;">Apostille</span></span>
             <span class="brand-subtitle">Official Document Desk</span>
           </div>
         </a>
@@ -1069,7 +1071,7 @@ function services(page) {
       return `
         <article class="service-card ${isExpress ? "express-card" : ""}">
           <div class="service-card-top">
-            <div class="service-icon-box" ${isExpress ? 'style="background: rgba(2, 132, 199, 0.12); color: #0284c7;"' : ''}>
+            <div class="service-icon-box" ${isExpress ? 'style="background: rgba(0, 180, 216, 0.15); color: #00b4d8;"' : ''}>
               ${iconSvg(service.icon || "apostille")}
             </div>
             ${service.badge ? `<span class="service-badge">${escapeHtml(service.badge)}</span>` : ""}
@@ -1285,7 +1287,7 @@ function schema(page) {
     "@type": page.schemaType,
     name: page.title,
     url: urlFor(page.path),
-    image: `${site}/favicon.svg`,
+    image: `${site}/favicon.svg?v=${assetVer}`,
     telephone: adminPrimary.tel,
     contactPoint: [
       {
@@ -1359,8 +1361,8 @@ function html(page) {
     <link rel="alternate" hreflang="${page.lang}" href="${canonical}">
     <link rel="alternate" hreflang="${page.lang === "id" ? "en" : "id"}" href="${urlFor(langAlt)}">
     <link rel="alternate" hreflang="x-default" href="${site}/">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/favicon.svg?v=${assetVer}" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css?v=${assetVer}">
     ${schema(page)}
   </head>
   <body>
@@ -1402,7 +1404,7 @@ function html(page) {
       </div>
     </div>
 
-    <script src="/app.js" defer></script>
+    <script src="/app.js?v=${assetVer}" defer></script>
   </body>
 </html>
 `;
@@ -1441,4 +1443,4 @@ ${urls}
 
 await Promise.all(pages.map(writePage));
 await Promise.all([writeRobots(), writeSitemap()]);
-console.log(`Generated ${pages.length} pages for GOApostille.com`);
+console.log(`Generated ${pages.length} pages for GOApostille.com with asset version ${assetVer}`);

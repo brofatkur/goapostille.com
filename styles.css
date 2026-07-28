@@ -1,6 +1,6 @@
 /* ==========================================================================
    GOApostille.com - Modern Mobile-First High-Conversion Stylesheet
-   Theme: Clean White Light Theme with Royal Blue & Sky Light Blue (#38bdf8)
+   Theme: Clean Light Background + AMPM Electric Sky Light Blue (#00b4d8 / #00c4ee)
    CTA: Vibrant WhatsApp Emerald Green (#25D366)
    ========================================================================== */
 
@@ -19,13 +19,13 @@
   --primary-navy-light: #1e293b;
   --primary-navy-surface: #0f172a;
   
-  /* Royal Blue & Sky Light Blue Theme */
-  --brand-blue: #2563eb;
-  --brand-blue-hover: #1d4ed8;
-  --light-blue: #0284c7;
-  --light-blue-bright: #38bdf8;
-  --light-blue-soft: rgba(2, 132, 199, 0.08);
-  --light-blue-border: rgba(2, 132, 199, 0.25);
+  /* AMPM Electric Sky Light Blue Theme (#00b4d8 / #00c4ee) */
+  --brand-blue: #0077b6;
+  --brand-blue-hover: #023e8a;
+  --light-blue: #00b4d8;
+  --light-blue-bright: #00c4ee;
+  --light-blue-soft: rgba(0, 180, 216, 0.1);
+  --light-blue-border: rgba(0, 180, 216, 0.3);
   
   /* WhatsApp Brand Colors (KEPT VIBRANT GREEN AS REQUESTED) */
   --wa-green: #25D366;
@@ -40,12 +40,12 @@
   --text-muted: #64748b;
   --text-dark: #0f172a;
   --border-light: #e2e8f0;
-  --border-focus: #0284c7;
+  --border-focus: #00b4d8;
 
   /* Gradients */
   --grad-hero: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
-  --grad-logo: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
-  --grad-blue: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+  --grad-logo: linear-gradient(135deg, #00c4ee 0%, #0077b6 100%); /* AMPM Sky Light Blue Gradient */
+  --grad-blue: linear-gradient(135deg, #00c4ee 0%, #0077b6 100%);
   --grad-wa: linear-gradient(135deg, #25D366 0%, #128C7E 100%); /* KEPT GREEN CTA GRADIENT */
 
   /* Shadows */
@@ -53,7 +53,7 @@
   --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
   --shadow-wa: 0 10px 25px -5px rgba(37, 211, 102, 0.45);
-  --shadow-logo: 0 8px 20px -3px rgba(37, 99, 235, 0.35);
+  --shadow-logo: 0 8px 22px -2px rgba(0, 196, 238, 0.45);
   --glass-bg: rgba(255, 255, 255, 0.95);
   --glass-border: #e2e8f0;
 
@@ -157,7 +157,7 @@ h1, h2, h3, h4 {
 }
 
 .text-gradient-blue {
-  background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+  background: linear-gradient(135deg, #00c4ee 0%, #0077b6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -188,9 +188,9 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse-ring-blue {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(2, 132, 199, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(0, 180, 216, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
 }
 
 /* ==========================================================================
@@ -201,7 +201,7 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
@@ -222,30 +222,30 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
 }
 
-/* LIGHT BLUE LOGO MARK */
+/* AMPM SKY LIGHT BLUE LOGO MARK */
 .brand-mark {
   width: 44px;
   height: 44px;
-  background: var(--grad-logo);
+  background: linear-gradient(135deg, #00c4ee 0%, #0077b6 100%) !important;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #ffffff !important;
   box-shadow: var(--shadow-logo);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .brand:hover .brand-mark {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px -2px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 10px 28px -2px rgba(0, 196, 238, 0.6);
 }
 
 .brand-mark svg {
   width: 26px;
   height: 26px;
   fill: none;
-  stroke: currentColor;
+  stroke: #ffffff !important;
   stroke-width: 2.3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -265,7 +265,7 @@ h1, h2, h3, h4 {
 }
 
 .brand-title span {
-  color: var(--light-blue);
+  color: var(--light-blue) !important;
 }
 
 .brand-subtitle {
@@ -295,7 +295,7 @@ h1, h2, h3, h4 {
 }
 
 .desktop-nav a:hover {
-  color: var(--brand-blue);
+  color: var(--light-blue);
 }
 
 .nav-actions {
@@ -454,7 +454,7 @@ body.menu-open .mobile-menu {
   right: -100px;
   width: 550px;
   height: 550px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(248, 250, 252, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 196, 238, 0.22) 0%, rgba(248, 250, 252, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -465,7 +465,7 @@ body.menu-open .mobile-menu {
   left: -100px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(248, 250, 252, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 119, 182, 0.15) 0%, rgba(248, 250, 252, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -660,7 +660,7 @@ body.menu-open .mobile-menu {
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   outline: none;
   border-color: var(--light-blue);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
   background: #ffffff;
 }
 
@@ -1046,9 +1046,9 @@ body.menu-open .mobile-menu {
   line-height: 1;
 }
 
-/* BLUE STARS - NO ORANGE */
+/* AMPM BLUE STARS */
 .rating-stars {
-  color: #38bdf8;
+  color: #00c4ee;
   font-size: 1.25rem;
 }
 
@@ -1120,9 +1120,9 @@ body.menu-open .mobile-menu {
   box-shadow: var(--shadow-sm);
 }
 
-/* BLUE STARS - NO ORANGE */
+/* AMPM BLUE STARS */
 .testimonial-card .stars {
-  color: #2563eb;
+  color: #00b4d8;
   margin-bottom: 0.75rem;
 }
 
@@ -1207,7 +1207,7 @@ body.menu-open .mobile-menu {
    ========================================================================== */
 
 .cta-banner {
-  background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
+  background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
   border-radius: var(--radius-xl);
   padding: 2.5rem 1.5rem;
   text-align: center;
@@ -1363,7 +1363,7 @@ body.menu-open .mobile-menu {
 }
 
 .footer-links a:hover {
-  color: #38bdf8;
+  color: #00c4ee;
 }
 
 .footer-bottom {
