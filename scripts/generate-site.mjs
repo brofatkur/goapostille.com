@@ -815,6 +815,7 @@ function iconSvg(type) {
 
 function header(page) {
   const navItems = page.lang === "en" ? navEn : nav;
+  const isEn = page.lang === "en";
   const links = navItems
     .map(([label, href]) => `<a href="${href}">${label}</a>`)
     .join("");
@@ -827,13 +828,13 @@ function header(page) {
           <span class="brand-mark">${iconSvg("apostille")}</span>
           <span>
             <span class="brand-title">GOApostille</span>
-            <span class="brand-subtitle">Document services</span>
+            <span class="brand-subtitle">Document desk</span>
           </span>
         </a>
         <nav class="desktop-nav" aria-label="Navigasi utama">${links}</nav>
         <div class="nav-actions">
-          <a class="button secondary" href="tel:${adminPrimary.tel}">${adminPrimary.display}</a>
-          <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">WhatsApp</a>
+          <a class="header-phone" href="tel:${adminPrimary.tel}"><span>${isEn ? "Call Admin 1" : "Hubungi Admin 1"}</span>${adminPrimary.display}</a>
+          <a class="header-wa" href="${waUrl(page.defaultMessage)}">${isEn ? "Start review" : "Mulai review"}</a>
           <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" data-menu-toggle>
             <span></span><span></span><span></span>
           </button>
@@ -890,12 +891,8 @@ function reviewForm(page, variant = "") {
   const isEn = page.lang === "en";
   return `
           <form class="${formClass}" data-wa-form>
-            <div class="review-benefits">
-              <span><strong>${isEn ? "Fast response" : "Respons cepat"}</strong>${isEn ? "Team available on business days" : "Tim aktif pada hari kerja"}</span>
-              <span><strong>${isEn ? "Initial review" : "Pemeriksaan awal"}</strong>${isEn ? "Consult before sending originals" : "Konsultasi sebelum dokumen asli dikirim"}</span>
-              <span><strong>${isEn ? "Trusted" : "Dipercaya"}</strong>${isEn ? "Hundreds of client documents processed" : "Ratusan dokumen klien telah diproses"}</span>
-            </div>
-            <div class="field">
+            <div class="form-intro"><span>${iconSvg("shield")}</span><p>${isEn ? "Initial review only. No file upload or commitment required." : "Pemeriksaan awal saja. Tidak perlu unggah file atau membuat komitmen."}</p></div>
+            <div class="field field-name">
               <label for="name">${isEn ? "Name" : "Nama"}</label>
               <input id="name" name="name" autocomplete="name" placeholder="${isEn ? "Your name" : "Nama Anda"}" required>
             </div>
@@ -924,8 +921,8 @@ function reviewForm(page, variant = "") {
 function hero(page) {
   const isEn = page.lang === "en";
   const trustBadges = isEn
-    ? ["Initial consultation at no cost", "Documents reviewed before processing", "WhatsApp status updates", "Individuals and corporate clients"]
-    : ["Konsultasi awal tanpa biaya", "Dokumen diperiksa sebelum proses dimulai", "Pembaruan status melalui WhatsApp", "Melayani individu & korporat"];
+    ? ["No-cost initial review", "Clear route before originals are sent", "Updates through WhatsApp"]
+    : ["Review awal tanpa biaya", "Jalur jelas sebelum dokumen asli dikirim", "Update proses via WhatsApp"];
   const authorityBadges = isEn
     ? ["Aligned with ISO 9001:2015", "Registered with Ministry of Foreign Affairs", "Ministry of Law and Human Rights decree", "Registered with foreign embassies"]
     : ["Sesuai ISO 9001:2015", "Terdaftar Kemenlu", "SK Kemenkum RI", "Terdaftar Kedutaan Asing"];
@@ -934,45 +931,36 @@ function hero(page) {
     .join("");
   return `
     <section class="hero">
+      <div class="hero-backdrop" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <span class="eyebrow"><span class="pulse"></span>${escapeHtml(page.eyebrow)}</span>
           <h1>${escapeHtml(page.h1)}</h1>
           <p class="lead">${escapeHtml(page.lead)}</p>
-          <div class="hero-actions">
-            <a class="button whatsapp" href="${waUrl(page.defaultMessage)}">${escapeHtml(page.primaryCta)}</a>
-            <a class="button secondary" href="#layanan">${escapeHtml(page.secondaryCta)}</a>
+          <div class="route-preview" aria-label="${isEn ? "Document process preview" : "Ringkasan alur dokumen"}">
+            <span><b>01</b>${isEn ? "Send document photo" : "Kirim foto dokumen"}</span>
+            <i></i>
+            <span><b>02</b>${isEn ? "Get the right route" : "Dapatkan jalur yang tepat"}</span>
+            <i></i>
+            <span><b>03</b>${isEn ? "Continue with certainty" : "Lanjut dengan kepastian"}</span>
           </div>
           <ul class="micro-trust" aria-label="${isEn ? "Quick benefits" : "Keunggulan cepat"}">
-            ${trustBadges.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            ${trustBadges.map((item) => `<li>${iconSvg("check")}${escapeHtml(item)}</li>`).join("")}
           </ul>
         </div>
         <aside class="hero-form-card" aria-label="Form pemeriksaan awal dokumen">
-          <span class="kicker">${isEn ? "Document review form" : "Form pemeriksaan dokumen"}</span>
-          <h2>${isEn ? "Check your document needs at no cost." : "Periksa kebutuhan dokumen Anda — tanpa biaya."}</h2>
-          <p>${isEn ? "Fill this in briefly and WhatsApp will open with a clean message format so the team can understand your document and destination." : "Isi data singkat di bawah, lalu lanjutkan ke WhatsApp dengan pesan yang sudah tersusun rapi. Tim kami akan langsung memahami dokumen dan tujuan Anda."}</p>
+          <div class="review-card-head">
+            <span class="review-index">01</span>
+            <span><small>${isEn ? "Free document review" : "Review dokumen gratis"}</small><strong>${isEn ? "Start your case" : "Mulai kebutuhan Anda"}</strong></span>
+          </div>
+          <h2>${isEn ? "Tell us the document you are preparing." : "Ceritakan dokumen yang sedang Anda siapkan."}</h2>
+          <p>${isEn ? "In less than a minute, we prepare a WhatsApp consultation message for the document team." : "Dalam kurang dari satu menit, kami siapkan pesan konsultasi WhatsApp untuk tim dokumen."}</p>
           ${reviewForm(page, "quote-form-light")}
         </aside>
       </div>
-      <div class="container hero-proof">
-        <div class="proof-pill">
-          <strong>${isEn ? "Response" : "Respons"}</strong>
-          <span>${isEn ? "Fast" : "Cepat"}</span>
-          <em>${isEn ? "Initial guidance through WhatsApp" : "Arahan awal melalui WhatsApp"}</em>
-        </div>
-        <div class="proof-pill">
-          <strong>${isEn ? "Initial" : "Pemeriksaan"}</strong>
-          <span>${isEn ? "Review" : "Awal dokumen"}</span>
-          <em>${isEn ? "Consult before sending originals" : "Konsultasi sebelum dokumen asli dikirim"}</em>
-        </div>
-        <div class="proof-pill">
-          <strong>${isEn ? "Trusted" : "Dipercaya"}</strong>
-          <span>${isEn ? "Clients" : "Klien"}</span>
-          <em>${isEn ? "For personal and corporate documents" : "Untuk dokumen pribadi dan korporat"}</em>
-        </div>
-      </div>
-      <div class="container authority-badges" aria-label="${isEn ? "Authority badges" : "Badge kepercayaan"}">
-        <ul>${authorityItems}</ul>
+      <div class="container hero-authority">
+        <p>${isEn ? "Professional document handling, with clear administrative routes." : "Penanganan dokumen profesional, dengan jalur administrasi yang jelas."}</p>
+        <div class="authority-badges" aria-label="${isEn ? "Authority badges" : "Badge kepercayaan"}"><ul>${authorityItems}</ul></div>
       </div>
     </section>`;
 }
@@ -980,14 +968,19 @@ function hero(page) {
 function appPreview(page) {
   const isEn = page.lang === "en";
   return `
-    <section class="section app-preview">
-      <div class="container app-preview-grid">
-        <div class="section-head">
-          <span class="kicker">${isEn ? "Expert workflow" : "Alur kerja tim"}</span>
-          <h2>${isEn ? "Simple to follow, reviewed by a real document team." : "Tetap sederhana, tetap ditangani tim ahli."}</h2>
-          <p>${isEn ? "Every submitted document is checked by the team, not an automated system. You can follow each stage through WhatsApp." : "Setiap dokumen yang masuk diperiksa satu per satu oleh tim kami — bukan sistem otomatis. Anda bisa memantau setiap tahap prosesnya langsung melalui WhatsApp, dari pemeriksaan awal hingga dokumen siap digunakan."}</p>
+    <section class="desk-section" aria-label="${isEn ? "Document Desk" : "Document Desk"}">
+      <div class="container desk-shell">
+        <div class="desk-intro">
+          <span class="kicker">${isEn ? "GOA document desk" : "GOA document desk"}</span>
+          <h2>${isEn ? "No guesswork. Just the next clear action." : "Tidak perlu menerka. Cukup ikuti langkah berikutnya."}</h2>
+          <p>${isEn ? "The review starts with your document, destination country, and timeline. The team then maps the right route before you send originals." : "Review dimulai dari dokumen, negara tujuan, dan tenggat Anda. Setelah itu tim memetakan jalur yang tepat sebelum dokumen asli dikirim."}</p>
+          <a class="text-action" href="${waUrl(page.defaultMessage)}">${isEn ? "Ask the document desk" : "Tanya ke document desk"}<span>→</span></a>
         </div>
-        ${phoneMockup(page)}
+        <div class="case-board">
+          <div class="case-board-top"><span><i></i>${isEn ? "Document review active" : "Review dokumen aktif"}</span><b>${isEn ? "Today" : "Hari ini"}</b></div>
+          <div class="case-focus"><span>${iconSvg("apostille")}</span><div><small>${isEn ? "Your next action" : "Langkah Anda berikutnya"}</small><strong>${isEn ? "Send a clear document photo" : "Kirim foto dokumen yang jelas"}</strong></div></div>
+          <ol class="case-steps"><li class="done"><b>1</b><span>${isEn ? "Initial review" : "Pemeriksaan awal"}<small>${isEn ? "Free" : "Tanpa biaya"}</small></span><em>✓</em></li><li><b>2</b><span>${isEn ? "Service route" : "Jalur layanan"}<small>${isEn ? "Based on destination" : "Sesuai negara tujuan"}</small></span></li><li><b>3</b><span>${isEn ? "Process update" : "Update proses"}<small>WhatsApp</small></span></li></ol>
+        </div>
       </div>
     </section>`;
 }
@@ -1001,32 +994,25 @@ function services(page) {
         const icon = service.icon || iconTypes[index] || "apostille";
         const cta = service.cta || (isEn ? "Open service" : "Buka layanan");
         return `
-        <article class="card service-card">
-          <div class="service-card-head">
-            <span class="service-icon">${iconSvg(icon)}</span>
-            <h3>${escapeHtml(service.title)}</h3>
-          </div>
-          ${service.badge ? `<span class="service-badge">${escapeHtml(service.badge)}</span>` : ""}
+        <article class="service-card">
+          <div class="service-card-top"><span class="service-icon">${iconSvg(icon)}</span>${service.badge ? `<span class="service-badge">${escapeHtml(service.badge)}</span>` : ""}</div>
+          <h3>${escapeHtml(service.title)}</h3>
           <p>${escapeHtml(service.text)}</p>
-          ${
-            service.href
-              ? `<a class="card-link" href="${service.href}">${escapeHtml(cta)} -&gt;</a>`
-              : `<a class="card-link" href="#konsultasi">${isEn ? "Consult" : "Konsultasi"} -&gt;</a>`
-          }
+          ${service.href ? `<a class="card-link" href="${service.href}">${escapeHtml(cta)} <span>→</span></a>` : `<a class="card-link" href="#konsultasi">${isEn ? "Consult" : "Konsultasi"} <span>→</span></a>`}
         </article>`;
       }
     )
     .join("");
 
   return `
-    <section class="section" id="layanan">
+    <section class="services-section" id="layanan">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head services-head">
           <span class="kicker">${isEn ? "Our Services" : "Layanan Kami"}</span>
           <h2>${escapeHtml(page.servicesTitle)}</h2>
           <p>${escapeHtml(page.servicesLead)}</p>
         </div>
-        <div class="grid three">${cards}</div>
+        <div class="service-rail">${cards}</div>
       </div>
     </section>`;
 }
@@ -1037,16 +1023,17 @@ function trust(page) {
     .map(
       ([title, text]) => `
         <article class="trust-item">
+          <span class="trust-mark">${iconSvg("check")}</span>
           <b>${escapeHtml(title)}</b>
-          <span>${escapeHtml(text)}</span>
+          <p>${escapeHtml(text)}</p>
         </article>`
     )
     .join("");
 
   return `
-    <section class="section tight" id="trust">
-      <div class="container">
-        <div class="section-head center">
+    <section class="trust-section" id="trust">
+      <div class="container trust-layout">
+        <div class="section-head trust-copy">
           <span class="kicker">${isEn ? "Why clients trust us" : "Kepercayaan klien"}</span>
           <h2>${escapeHtml(page.trustTitle)}</h2>
           <p>${escapeHtml(page.trustLead)}</p>
@@ -1071,9 +1058,9 @@ function conversionProof(page) {
     .join("");
 
   return `
-    <section class="section proof-section" id="review">
+    <section class="proof-section" id="review">
       <div class="container">
-        <div class="section-head center">
+        <div class="section-head proof-heading">
           <span class="kicker">${isEn ? "Client experience" : "Pengalaman klien"}</span>
           <h2>${isEn ? "Make sure your important documents are handled properly." : "Pastikan dokumen penting Anda ditangani dengan tepat."}</h2>
           <p>${isEn ? "Check the right service route first, then continue with a clear flow from the first consultation." : "Periksa jalur layanan yang sesuai, dan pastikan dokumen Anda diproses dengan alur yang jelas sejak konsultasi awal."}</p>
@@ -1081,7 +1068,8 @@ function conversionProof(page) {
         <div class="proof-grid">
           <article class="review-badge">
             <span class="badge-label">${isEn ? "Client confidence" : "Kepercayaan klien"}</span>
-            <strong>${isEn ? "Hundreds of documents assisted" : "Ratusan dokumen telah dibantu"}</strong>
+            <strong><b>5.0</b>${isEn ? "from client reviews" : "dari pengalaman klien"}</strong>
+            <div class="review-stars">★★★★★ <span>${isEn ? "Document service review" : "Review layanan dokumen"}</span></div>
             <p>${isEn ? "Individual and corporate clients have trusted apostille, legalization, and sworn translation assistance through a clear WhatsApp-guided flow." : "Ratusan klien — individu maupun korporat — telah mempercayakan dokumen apostille, legalisasi, dan penerjemahan tersumpah kepada kami."}</p>
             <a class="button secondary" href="${waUrl(isEn ? "Hello GOApostille, I would like a WhatsApp consultation for my document." : "Halo GOApostille, saya ingin konsultasi via WhatsApp untuk dokumen saya.")}">${isEn ? "Consult on WhatsApp" : "Konsultasi via WhatsApp"}</a>
           </article>
@@ -1106,7 +1094,7 @@ function processSection(page) {
   const cards = (isEn ? workflowEn : workflow)
     .map(
       ([title, text]) => `
-        <article class="card">
+        <article class="process-card">
           <h3>${escapeHtml(title)}</h3>
           <p>${escapeHtml(text)}</p>
         </article>`
@@ -1114,7 +1102,7 @@ function processSection(page) {
     .join("");
 
   return `
-    <section class="section">
+    <section class="process-section">
       <div class="container">
         <div class="section-head">
           <span class="kicker">${isEn ? "Quick process" : "Alur cepat"}</span>
@@ -1130,7 +1118,7 @@ function keywords(page) {
   const isEn = page.lang === "en";
   const tags = page.keywordsList.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
   return `
-    <section class="section tight">
+    <section class="topics-section">
       <div class="container">
         <div class="section-head">
           <span class="kicker">${isEn ? "Service topics" : "Topik layanan"}</span>
@@ -1145,9 +1133,9 @@ function keywords(page) {
 function cta(page) {
   const isEn = page.lang === "en";
   return `
-    <section class="section" id="konsultasi">
+    <section class="consult-section" id="konsultasi">
       <div class="container">
-        <div class="cta-panel cta-panel-simple">
+        <div class="cta-panel">
           <div>
             <span class="kicker">${isEn ? "Document consultation" : "Konsultasi dokumen"}</span>
             <h2>${isEn ? "Not sure where to start? Send your document first." : "Belum yakin harus mulai dari mana?"}</h2>
@@ -1158,6 +1146,7 @@ function cta(page) {
             </div>
           </div>
           <div class="cta-note">
+            <span class="cta-note-icon">${iconSvg("chat")}</span>
             <strong>${isEn ? "Fast response during business hours" : "Respons cepat di jam kerja"}</strong>
             <span>${isEn ? "Prepare document photos, destination country, and deadline if any." : "Siapkan foto dokumen, negara tujuan, dan tenggat waktu jika ada."}</span>
           </div>
