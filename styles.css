@@ -1,61 +1,62 @@
 /* ==========================================================================
    GOApostille.com - Modern Mobile-First High-Conversion Stylesheet
-   Theme: Executive Royal Blue & Light Blue Palette
-   CTA: Vibrant WhatsApp Emerald Green
+   Theme: Executive Royal Navy & Vibrant Sky Light Blue (#38bdf8)
+   CTA: High-Contrast WhatsApp Emerald Green (#25D366)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
-  /* Royal Blue & Light Blue Palette */
-  --primary-navy: #0b192c;
-  --primary-navy-light: #1e3a8a;
-  --primary-navy-surface: #0f172a;
+  /* Primary Navy & Royal Blue Base */
+  --primary-navy: #091428;
+  --primary-navy-light: #162b50;
+  --primary-navy-surface: #0f1e3d;
+  
+  /* Sky Light Blue Brand Colors (LOGO & THEME HIGHLIGHTS) */
+  --light-blue: #38bdf8;
+  --light-blue-hover: #7dd3fc;
+  --light-blue-dark: #0284c7;
+  --light-blue-soft: rgba(56, 189, 248, 0.16);
+  --light-blue-glow: rgba(56, 189, 248, 0.4);
   
   --brand-blue: #0284c7;
   --brand-blue-hover: #0369a1;
-  --brand-blue-soft: rgba(56, 189, 248, 0.14);
-  
-  --light-blue: #38bdf8;
-  --light-blue-hover: #7dd3fc;
-  --light-blue-soft: rgba(56, 189, 248, 0.12);
-  --light-blue-glow: rgba(56, 189, 248, 0.35);
-  
+
   /* WhatsApp Brand Colors (KEPT VIBRANT GREEN FOR HIGH CONVERSION CTA) */
   --wa-green: #25D366;
   --wa-green-hover: #20bd5a;
   --wa-green-dark: #128C7E;
   --wa-green-soft: rgba(37, 211, 102, 0.14);
-  --wa-green-glow: rgba(37, 211, 102, 0.35);
+  --wa-green-glow: rgba(37, 211, 102, 0.45);
 
   /* Accent & Gradients */
   --accent-gold: #fbbf24;
   --accent-gold-soft: rgba(251, 191, 36, 0.15);
   
-  --grad-hero: linear-gradient(135deg, #0b192c 0%, #1e3a8a 50%, #0f172a 100%);
-  --grad-blue: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-  --grad-card-header: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(30, 58, 138, 0.2) 100%);
+  --grad-hero: linear-gradient(135deg, #071120 0%, #112344 50%, #0c1830 100%);
+  --grad-logo: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --grad-blue: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
   --grad-wa: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
 
   /* Neutral Tones */
-  --bg-body: #060d1a;
-  --bg-card: #0f1c38;
-  --bg-card-hover: #16284f;
+  --bg-body: #050b17;
+  --bg-card: #0d1933;
+  --bg-card-hover: #142447;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --text-dark: #0f172a;
+  --text-dark: #071120;
   --text-secondary: #cbd5e1;
-  --border-light: rgba(56, 189, 248, 0.15);
-  --border-focus: rgba(56, 189, 248, 0.6);
+  --border-light: rgba(56, 189, 248, 0.18);
+  --border-focus: rgba(56, 189, 248, 0.65);
 
   /* Shadows & Glass */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
   --shadow-wa: 0 10px 25px -5px rgba(37, 211, 102, 0.45);
-  --shadow-blue: 0 10px 25px -5px rgba(56, 189, 248, 0.3);
-  --glass-bg: rgba(15, 28, 56, 0.85);
-  --glass-border: rgba(56, 189, 248, 0.25);
+  --shadow-logo: 0 8px 25px -3px rgba(56, 189, 248, 0.55);
+  --glass-bg: rgba(13, 25, 51, 0.88);
+  --glass-border: rgba(56, 189, 248, 0.28);
 
   /* Layout & Spacing */
   --radius-sm: 8px;
@@ -157,13 +158,7 @@ h1, h2, h3, h4 {
 }
 
 .text-gradient-blue {
-  background: linear-gradient(135deg, #ffffff 20%, var(--light-blue) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-wa {
-  background: linear-gradient(135deg, #ffffff 20%, #4ade80 100%);
+  background: linear-gradient(135deg, #ffffff 30%, var(--light-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -180,7 +175,7 @@ h1, h2, h3, h4 {
   background: var(--light-blue-soft);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   margin-bottom: 0.75rem;
 }
 
@@ -207,7 +202,7 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(6, 13, 26, 0.88);
+  background: rgba(5, 11, 23, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
@@ -227,24 +222,31 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
 }
 
+/* LIGHT BLUE LOGO MARK */
 .brand-mark {
-  width: 42px;
-  height: 42px;
-  background: var(--grad-blue);
+  width: 44px;
+  height: 44px;
+  background: var(--grad-logo);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  box-shadow: var(--shadow-blue);
+  color: #041026; /* Deep navy icon for sharp contrast on light blue logo */
+  box-shadow: var(--shadow-logo);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px -2px rgba(56, 189, 248, 0.75);
 }
 
 .brand-mark svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 2.2;
+  stroke-width: 2.3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -255,7 +257,7 @@ h1, h2, h3, h4 {
 }
 
 .brand-title {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.03em;
@@ -269,7 +271,8 @@ h1, h2, h3, h4 {
 .brand-subtitle {
   font-size: 0.725rem;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .desktop-nav {
@@ -310,7 +313,7 @@ h1, h2, h3, h4 {
   color: #052e16;
   font-weight: 800;
   font-size: 0.875rem;
-  padding: 0.6rem 1.1rem;
+  padding: 0.6rem 1.15rem;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-wa);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -318,7 +321,7 @@ h1, h2, h3, h4 {
 
 .btn-header-wa:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -5px rgba(37, 211, 102, 0.7);
+  box-shadow: 0 12px 30px -5px rgba(37, 211, 102, 0.75);
 }
 
 .btn-header-wa svg {
@@ -448,9 +451,9 @@ body.menu-open .mobile-menu {
   position: absolute;
   top: -100px;
   right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(11, 25, 44, 0) 70%);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(7, 17, 32, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -461,7 +464,7 @@ body.menu-open .mobile-menu {
   left: -100px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(30, 58, 138, 0.25) 0%, rgba(11, 25, 44, 0) 70%);
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, rgba(7, 17, 32, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -639,8 +642,8 @@ body.menu-open .mobile-menu {
 
 .form-input, .form-select, .form-textarea {
   width: 100%;
-  background: rgba(6, 13, 26, 0.7);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(5, 11, 23, 0.75);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: var(--radius-md);
   padding: 0.85rem 1rem;
   color: #ffffff;
@@ -668,7 +671,7 @@ body.menu-open .mobile-menu {
   resize: vertical;
 }
 
-/* WhatsApp Main Submit Button - KEPT GREEN FOR HIGH CRO */
+/* WhatsApp Main Submit Button - KEPT VIBRANT GREEN FOR HIGH CRO */
 .btn-submit-wa {
   width: 100%;
   display: flex;
@@ -688,7 +691,7 @@ body.menu-open .mobile-menu {
 
 .btn-submit-wa:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 35px -5px rgba(37, 211, 102, 0.7);
+  box-shadow: 0 14px 35px -5px rgba(37, 211, 102, 0.75);
   background: linear-gradient(135deg, #28e06e 0%, #15a090 100%);
 }
 
@@ -842,7 +845,7 @@ body.menu-open .mobile-menu {
 .service-card:hover {
   transform: translateY(-6px);
   background: var(--bg-card-hover);
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: rgba(56, 189, 248, 0.45);
   box-shadow: var(--shadow-md);
 }
 
@@ -924,7 +927,7 @@ body.menu-open .mobile-menu {
 
 /* Highlighted Express Card */
 .service-card.express-card {
-  background: linear-gradient(135deg, rgba(37, 211, 102, 0.12) 0%, rgba(15, 28, 56, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.12) 0%, rgba(13, 25, 51, 0.95) 100%);
   border: 1px solid var(--wa-green);
 }
 
@@ -969,7 +972,7 @@ body.menu-open .mobile-menu {
   font-size: 2.5rem;
   font-weight: 900;
   color: var(--light-blue);
-  opacity: 0.85;
+  opacity: 0.9;
   line-height: 1;
   margin-bottom: 1rem;
   font-family: monospace, sans-serif;
@@ -1007,7 +1010,7 @@ body.menu-open .mobile-menu {
 }
 
 .proof-highlight-card {
-  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #162b50 0%, #091428 100%);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -1186,7 +1189,7 @@ body.menu-open .mobile-menu {
    ========================================================================== */
 
 .cta-banner {
-  background: linear-gradient(135deg, #0b192c 0%, #1e3a8a 100%);
+  background: linear-gradient(135deg, #071120 0%, #162b50 100%);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: 2.5rem 1.5rem;
@@ -1244,7 +1247,7 @@ body.menu-open .mobile-menu {
 
 .btn-cta-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px -5px rgba(37, 211, 102, 0.7);
+  box-shadow: 0 16px 40px -5px rgba(37, 211, 102, 0.75);
 }
 
 .btn-cta-primary svg {
@@ -1276,7 +1279,7 @@ body.menu-open .mobile-menu {
    ========================================================================== */
 
 .site-footer {
-  background: #040812;
+  background: #030710;
   border-top: 1px solid var(--border-light);
   padding: 4rem 0 2rem 0;
 }
@@ -1363,7 +1366,7 @@ body.menu-open .mobile-menu {
   left: 0;
   right: 0;
   z-index: 990;
-  background: rgba(6, 13, 26, 0.92);
+  background: rgba(5, 11, 23, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border-light);
@@ -1372,7 +1375,7 @@ body.menu-open .mobile-menu {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
 }
 
 @media (min-width: 992px) {
@@ -1484,7 +1487,7 @@ body.menu-open .mobile-menu {
   bottom: 85px;
   left: 1rem;
   z-index: 980;
-  background: rgba(15, 28, 56, 0.95);
+  background: rgba(13, 25, 51, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--wa-green);
