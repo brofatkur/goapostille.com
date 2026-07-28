@@ -1,7 +1,6 @@
 /* ==========================================================================
    GOApostille.com - Modern Mobile-First High-Conversion Stylesheet
-   Theme: Executive Royal Navy & Vibrant Sky Light Blue (#38bdf8)
-   CTA: High-Contrast WhatsApp Emerald Green (#25D366)
+   Full Theme & CTA Palette: Executive Royal Navy & Vibrant Sky Light Blue (#38bdf8)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
@@ -12,22 +11,22 @@
   --primary-navy-light: #162b50;
   --primary-navy-surface: #0f1e3d;
   
-  /* Sky Light Blue Brand Colors (LOGO & THEME HIGHLIGHTS) */
+  /* Sky Light Blue Main Theme & CTA Palette (#38bdf8) */
   --light-blue: #38bdf8;
   --light-blue-hover: #7dd3fc;
   --light-blue-dark: #0284c7;
   --light-blue-soft: rgba(56, 189, 248, 0.16);
-  --light-blue-glow: rgba(56, 189, 248, 0.4);
+  --light-blue-glow: rgba(56, 189, 248, 0.45);
   
   --brand-blue: #0284c7;
   --brand-blue-hover: #0369a1;
 
-  /* WhatsApp Brand Colors (KEPT VIBRANT GREEN FOR HIGH CONVERSION CTA) */
-  --wa-green: #25D366;
-  --wa-green-hover: #20bd5a;
-  --wa-green-dark: #128C7E;
-  --wa-green-soft: rgba(37, 211, 102, 0.14);
-  --wa-green-glow: rgba(37, 211, 102, 0.45);
+  /* Aliased CTA Variables to Sky Light Blue */
+  --wa-green: #38bdf8;
+  --wa-green-hover: #7dd3fc;
+  --wa-green-dark: #0284c7;
+  --wa-green-soft: rgba(56, 189, 248, 0.16);
+  --wa-green-glow: rgba(56, 189, 248, 0.45);
 
   /* Accent & Gradients */
   --accent-gold: #fbbf24;
@@ -36,7 +35,7 @@
   --grad-hero: linear-gradient(135deg, #071120 0%, #112344 50%, #0c1830 100%);
   --grad-logo: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
   --grad-blue: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  --grad-wa: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  --grad-wa: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); /* Light Blue CTA Gradient */
 
   /* Neutral Tones */
   --bg-body: #050b17;
@@ -46,14 +45,14 @@
   --text-muted: #94a3b8;
   --text-dark: #071120;
   --text-secondary: #cbd5e1;
-  --border-light: rgba(56, 189, 248, 0.18);
+  --border-light: rgba(56, 189, 248, 0.2);
   --border-focus: rgba(56, 189, 248, 0.65);
 
   /* Shadows & Glass */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-  --shadow-wa: 0 10px 25px -5px rgba(37, 211, 102, 0.45);
+  --shadow-wa: 0 10px 25px -3px rgba(56, 189, 248, 0.5);
   --shadow-logo: 0 8px 25px -3px rgba(56, 189, 248, 0.55);
   --glass-bg: rgba(13, 25, 51, 0.88);
   --glass-border: rgba(56, 189, 248, 0.28);
@@ -136,8 +135,8 @@ button {
   position: absolute;
   top: -100px;
   left: 1rem;
-  background: var(--wa-green);
-  color: #000;
+  background: var(--light-blue);
+  color: #041026;
   padding: 0.75rem 1.5rem;
   z-index: 10000;
   font-weight: 700;
@@ -304,24 +303,24 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
 }
 
-/* WhatsApp Primary CTA Header Button */
+/* Light Blue Primary Header Button */
 .btn-header-wa {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--grad-wa);
-  color: #052e16;
+  background: var(--grad-logo);
+  color: #041026;
   font-weight: 800;
   font-size: 0.875rem;
   padding: 0.6rem 1.15rem;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-wa);
+  box-shadow: var(--shadow-logo);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-header-wa:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -5px rgba(37, 211, 102, 0.75);
+  box-shadow: 0 12px 30px -3px rgba(56, 189, 248, 0.75);
 }
 
 .btn-header-wa svg {
@@ -422,8 +421,8 @@ body.menu-open .mobile-menu {
 }
 
 .mobile-menu a.cta-drawer {
-  background: var(--grad-wa);
-  color: #042f1a;
+  background: var(--grad-logo);
+  color: #041026;
   margin-top: 0.5rem;
   justify-content: center;
 }
@@ -574,7 +573,7 @@ body.menu-open .mobile-menu {
   flex-shrink: 0;
 }
 
-/* Hero Form Card (High Converting WA Lead Form) */
+/* Hero Form Card (High Converting Lead Form) */
 .hero-form-card {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -603,8 +602,8 @@ body.menu-open .mobile-menu {
   gap: 0.4rem;
   font-size: 0.75rem;
   font-weight: 800;
-  color: #000;
-  background: var(--wa-green);
+  color: #041026;
+  background: var(--light-blue);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
   text-transform: uppercase;
@@ -671,28 +670,28 @@ body.menu-open .mobile-menu {
   resize: vertical;
 }
 
-/* WhatsApp Main Submit Button - KEPT VIBRANT GREEN FOR HIGH CRO */
+/* Light Blue Main Submit Button */
 .btn-submit-wa {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: var(--grad-wa);
-  color: #032b17;
+  background: var(--grad-logo);
+  color: #041026;
   font-size: 1.0625rem;
   font-weight: 800;
   padding: 1rem 1.5rem;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-wa);
+  box-shadow: var(--shadow-logo);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   margin-top: 0.5rem;
 }
 
 .btn-submit-wa:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 35px -5px rgba(37, 211, 102, 0.75);
-  background: linear-gradient(135deg, #28e06e 0%, #15a090 100%);
+  box-shadow: 0 14px 35px -3px rgba(56, 189, 248, 0.75);
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);
 }
 
 .btn-submit-wa svg {
@@ -908,7 +907,7 @@ body.menu-open .mobile-menu {
   gap: 0.5rem;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--wa-green);
+  color: var(--light-blue);
   transition: gap 0.2s ease;
 }
 
@@ -927,8 +926,8 @@ body.menu-open .mobile-menu {
 
 /* Highlighted Express Card */
 .service-card.express-card {
-  background: linear-gradient(135deg, rgba(37, 211, 102, 0.12) 0%, rgba(13, 25, 51, 0.95) 100%);
-  border: 1px solid var(--wa-green);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.16) 0%, rgba(13, 25, 51, 0.95) 100%);
+  border: 1px solid var(--light-blue);
 }
 
 /* ==========================================================================
@@ -1235,19 +1234,19 @@ body.menu-open .mobile-menu {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--grad-wa);
-  color: #032b17;
+  background: var(--grad-logo);
+  color: #041026;
   font-size: 1.1rem;
   font-weight: 800;
   padding: 1rem 2rem;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-wa);
+  box-shadow: var(--shadow-logo);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-cta-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px -5px rgba(37, 211, 102, 0.75);
+  box-shadow: 0 16px 40px -3px rgba(56, 189, 248, 0.75);
 }
 
 .btn-cta-primary svg {
@@ -1357,7 +1356,7 @@ body.menu-open .mobile-menu {
 }
 
 /* ==========================================================================
-   Sticky Mobile Bottom Navigation & Floating WA Widget (KEPT GREEN FOR CRO)
+   Sticky Mobile Bottom Navigation & Floating Widget (LIGHT BLUE THEME)
    ========================================================================== */
 
 .mobile-bottom-bar {
@@ -1398,7 +1397,7 @@ body.menu-open .mobile-menu {
 
 .bottom-bar-info span {
   font-size: 0.725rem;
-  color: var(--wa-green);
+  color: var(--light-blue);
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -1409,13 +1408,13 @@ body.menu-open .mobile-menu {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--grad-wa);
-  color: #032e18;
+  background: var(--grad-logo);
+  color: #041026;
   font-weight: 800;
   font-size: 0.875rem;
   padding: 0.65rem 1.1rem;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-wa);
+  box-shadow: var(--shadow-logo);
 }
 
 .btn-bottom-wa svg {
@@ -1424,7 +1423,7 @@ body.menu-open .mobile-menu {
   fill: currentColor;
 }
 
-/* Floating WhatsApp Button for Desktop */
+/* Floating Light Blue WhatsApp Button for Desktop */
 .floating-wa-btn {
   position: fixed;
   bottom: 2rem;
@@ -1432,13 +1431,13 @@ body.menu-open .mobile-menu {
   z-index: 990;
   width: 60px;
   height: 60px;
-  background: var(--grad-wa);
-  color: #ffffff;
+  background: var(--grad-logo);
+  color: #041026;
   border-radius: 50%;
   display: none;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-wa);
+  box-shadow: var(--shadow-logo);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1450,13 +1449,13 @@ body.menu-open .mobile-menu {
 
 .floating-wa-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 16px 40px -5px rgba(37, 211, 102, 0.8);
+  box-shadow: 0 16px 40px -3px rgba(56, 189, 248, 0.8);
 }
 
 .floating-wa-btn svg {
   width: 32px;
   height: 32px;
-  fill: #ffffff;
+  fill: currentColor;
 }
 
 .floating-wa-tooltip {
@@ -1490,7 +1489,7 @@ body.menu-open .mobile-menu {
   background: rgba(13, 25, 51, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--wa-green);
+  border: 1px solid var(--light-blue);
   border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   display: flex;
@@ -1521,8 +1520,8 @@ body.menu-open .mobile-menu {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--wa-green-soft);
-  color: var(--wa-green);
+  background: var(--light-blue-soft);
+  color: var(--light-blue);
   display: flex;
   align-items: center;
   justify-content: center;
