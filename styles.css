@@ -1,20 +1,27 @@
 /* ==========================================================================
    GOApostille.com - Modern Mobile-First High-Conversion Stylesheet
-   Design System: Deep Executive Navy & WhatsApp Emerald
+   Theme: Executive Royal Blue & Light Blue Palette
+   CTA: Vibrant WhatsApp Emerald Green
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
-  /* Brand Color Palette */
-  --primary-navy: #0b132b;
-  --primary-navy-light: #1c2541;
-  --primary-navy-surface: #101935;
-  --brand-blue: #2563eb;
-  --brand-blue-hover: #1d4ed8;
-  --brand-blue-soft: rgba(37, 99, 235, 0.12);
+  /* Royal Blue & Light Blue Palette */
+  --primary-navy: #0b192c;
+  --primary-navy-light: #1e3a8a;
+  --primary-navy-surface: #0f172a;
   
-  /* WhatsApp Brand & Conversion Colors */
+  --brand-blue: #0284c7;
+  --brand-blue-hover: #0369a1;
+  --brand-blue-soft: rgba(56, 189, 248, 0.14);
+  
+  --light-blue: #38bdf8;
+  --light-blue-hover: #7dd3fc;
+  --light-blue-soft: rgba(56, 189, 248, 0.12);
+  --light-blue-glow: rgba(56, 189, 248, 0.35);
+  
+  /* WhatsApp Brand Colors (KEPT VIBRANT GREEN FOR HIGH CONVERSION CTA) */
   --wa-green: #25D366;
   --wa-green-hover: #20bd5a;
   --wa-green-dark: #128C7E;
@@ -22,33 +29,33 @@
   --wa-green-glow: rgba(37, 211, 102, 0.35);
 
   /* Accent & Gradients */
-  --accent-gold: #f59e0b;
-  --accent-gold-soft: rgba(245, 158, 11, 0.15);
-  --grad-hero: linear-gradient(135deg, #0b132b 0%, #1c2541 60%, #0f172a 100%);
+  --accent-gold: #fbbf24;
+  --accent-gold-soft: rgba(251, 191, 36, 0.15);
+  
+  --grad-hero: linear-gradient(135deg, #0b192c 0%, #1e3a8a 50%, #0f172a 100%);
+  --grad-blue: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  --grad-card-header: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(30, 58, 138, 0.2) 100%);
   --grad-wa: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  --grad-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  --grad-card: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --grad-gold: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
 
   /* Neutral Tones */
-  --bg-body: #080d1a;
-  --bg-card: #131c35;
-  --bg-card-hover: #192445;
-  --bg-card-light: #f8fafc;
+  --bg-body: #060d1a;
+  --bg-card: #0f1c38;
+  --bg-card-hover: #16284f;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dark: #0f172a;
   --text-secondary: #cbd5e1;
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(37, 211, 102, 0.5);
+  --border-light: rgba(56, 189, 248, 0.15);
+  --border-focus: rgba(56, 189, 248, 0.6);
 
   /* Shadows & Glass */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
-  --shadow-wa: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
-  --glass-bg: rgba(19, 28, 53, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-wa: 0 10px 25px -5px rgba(37, 211, 102, 0.45);
+  --shadow-blue: 0 10px 25px -5px rgba(56, 189, 248, 0.3);
+  --glass-bg: rgba(15, 28, 56, 0.85);
+  --glass-border: rgba(56, 189, 248, 0.25);
 
   /* Layout & Spacing */
   --radius-sm: 8px;
@@ -58,13 +65,6 @@
   --radius-full: 9999px;
   --container-max: 1200px;
   --header-height: 72px;
-}
-
-/* Light Mode Overrides for light containers if needed */
-.light-mode-card {
-  background: #ffffff;
-  color: var(--text-dark);
-  border: 1px solid #e2e8f0;
 }
 
 /* ==========================================================================
@@ -156,8 +156,8 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+.text-gradient-blue {
+  background: linear-gradient(135deg, #ffffff 20%, var(--light-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -176,27 +176,27 @@ h1, h2, h3, h4 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--wa-green);
-  background: var(--wa-green-soft);
+  color: var(--light-blue);
+  background: var(--light-blue-soft);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(37, 211, 102, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   margin-bottom: 0.75rem;
 }
 
 .kicker .pulse-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--wa-green);
+  background-color: var(--light-blue);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--wa-green);
-  animation: pulse-ring 2s infinite;
+  box-shadow: 0 0 10px var(--light-blue);
+  animation: pulse-ring-blue 2s infinite;
 }
 
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+@keyframes pulse-ring-blue {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
 }
 
 /* ==========================================================================
@@ -207,7 +207,7 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(8, 13, 26, 0.85);
+  background: rgba(6, 13, 26, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
@@ -230,13 +230,13 @@ h1, h2, h3, h4 {
 .brand-mark {
   width: 42px;
   height: 42px;
-  background: var(--grad-wa);
+  background: var(--grad-blue);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
-  box-shadow: var(--shadow-wa);
+  color: #ffffff;
+  box-shadow: var(--shadow-blue);
 }
 
 .brand-mark svg {
@@ -263,7 +263,7 @@ h1, h2, h3, h4 {
 }
 
 .brand-title span {
-  color: var(--wa-green);
+  color: var(--light-blue);
 }
 
 .brand-subtitle {
@@ -292,7 +292,7 @@ h1, h2, h3, h4 {
 }
 
 .desktop-nav a:hover {
-  color: var(--wa-green);
+  color: var(--light-blue);
 }
 
 .nav-actions {
@@ -301,13 +301,14 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
 }
 
+/* WhatsApp Primary CTA Header Button */
 .btn-header-wa {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: var(--grad-wa);
   color: #052e16;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.875rem;
   padding: 0.6rem 1.1rem;
   border-radius: var(--radius-full);
@@ -317,7 +318,7 @@ h1, h2, h3, h4 {
 
 .btn-header-wa:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -5px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 12px 30px -5px rgba(37, 211, 102, 0.7);
 }
 
 .btn-header-wa svg {
@@ -449,7 +450,7 @@ body.menu-open .mobile-menu {
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, rgba(11, 19, 43, 0) 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(11, 25, 44, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -460,7 +461,7 @@ body.menu-open .mobile-menu {
   left: -100px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(11, 19, 43, 0) 70%);
+  background: radial-gradient(circle, rgba(30, 58, 138, 0.25) 0%, rgba(11, 25, 44, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -499,7 +500,7 @@ body.menu-open .mobile-menu {
 .pill-selector-title {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--light-blue);
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -527,9 +528,9 @@ body.menu-open .mobile-menu {
 }
 
 .doc-pill:hover, .doc-pill.active {
-  background: var(--wa-green-soft);
-  border-color: var(--wa-green);
-  color: var(--wa-green);
+  background: var(--light-blue-soft);
+  border-color: var(--light-blue);
+  color: var(--light-blue);
   transform: translateY(-2px);
 }
 
@@ -566,7 +567,7 @@ body.menu-open .mobile-menu {
 .hero-trust-list li svg {
   width: 20px;
   height: 20px;
-  color: var(--wa-green);
+  color: var(--light-blue);
   flex-shrink: 0;
 }
 
@@ -598,7 +599,7 @@ body.menu-open .mobile-menu {
   align-items: center;
   gap: 0.4rem;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #000;
   background: var(--wa-green);
   padding: 0.25rem 0.75rem;
@@ -638,8 +639,8 @@ body.menu-open .mobile-menu {
 
 .form-input, .form-select, .form-textarea {
   width: 100%;
-  background: rgba(8, 13, 26, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(6, 13, 26, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: var(--radius-md);
   padding: 0.85rem 1rem;
   color: #ffffff;
@@ -653,7 +654,7 @@ body.menu-open .mobile-menu {
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   outline: none;
-  border-color: var(--wa-green);
+  border-color: var(--light-blue);
   box-shadow: 0 0 0 3px var(--border-focus);
 }
 
@@ -667,6 +668,7 @@ body.menu-open .mobile-menu {
   resize: vertical;
 }
 
+/* WhatsApp Main Submit Button - KEPT GREEN FOR HIGH CRO */
 .btn-submit-wa {
   width: 100%;
   display: flex;
@@ -709,7 +711,7 @@ body.menu-open .mobile-menu {
 .form-guarantee svg {
   width: 16px;
   height: 16px;
-  color: var(--wa-green);
+  color: var(--light-blue);
 }
 
 /* Authority Badges Bar */
@@ -725,7 +727,7 @@ body.menu-open .mobile-menu {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--light-blue);
   margin-bottom: 1.25rem;
 }
 
@@ -754,8 +756,8 @@ body.menu-open .mobile-menu {
 .authority-icon {
   width: 36px;
   height: 36px;
-  background: var(--brand-blue-soft);
-  color: #60a5fa;
+  background: var(--light-blue-soft);
+  color: var(--light-blue);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -840,7 +842,7 @@ body.menu-open .mobile-menu {
 .service-card:hover {
   transform: translateY(-6px);
   background: var(--bg-card-hover);
-  border-color: rgba(37, 211, 102, 0.4);
+  border-color: rgba(56, 189, 248, 0.4);
   box-shadow: var(--shadow-md);
 }
 
@@ -855,8 +857,8 @@ body.menu-open .mobile-menu {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: rgba(37, 211, 102, 0.12);
-  color: var(--wa-green);
+  background: var(--light-blue-soft);
+  color: var(--light-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -877,7 +879,7 @@ body.menu-open .mobile-menu {
   background: var(--accent-gold-soft);
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
 .service-card h3 {
@@ -922,7 +924,7 @@ body.menu-open .mobile-menu {
 
 /* Highlighted Express Card */
 .service-card.express-card {
-  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(19, 28, 53, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.12) 0%, rgba(15, 28, 56, 0.95) 100%);
   border: 1px solid var(--wa-green);
 }
 
@@ -966,8 +968,8 @@ body.menu-open .mobile-menu {
 .process-step-num {
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--wa-green);
-  opacity: 0.8;
+  color: var(--light-blue);
+  opacity: 0.85;
   line-height: 1;
   margin-bottom: 1rem;
   font-family: monospace, sans-serif;
@@ -1005,7 +1007,7 @@ body.menu-open .mobile-menu {
 }
 
 .proof-highlight-card {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -1029,7 +1031,7 @@ body.menu-open .mobile-menu {
 }
 
 .rating-stars {
-  color: #f59e0b;
+  color: #fbbf24;
   font-size: 1.25rem;
 }
 
@@ -1100,7 +1102,7 @@ body.menu-open .mobile-menu {
 }
 
 .testimonial-card .stars {
-  color: #f59e0b;
+  color: #fbbf24;
   margin-bottom: 0.75rem;
 }
 
@@ -1141,7 +1143,7 @@ body.menu-open .mobile-menu {
 }
 
 .faq-item[open] {
-  border-color: var(--wa-green);
+  border-color: var(--light-blue);
 }
 
 .faq-item summary {
@@ -1164,7 +1166,7 @@ body.menu-open .mobile-menu {
   content: "+";
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--wa-green);
+  color: var(--light-blue);
   transition: transform 0.2s ease;
 }
 
@@ -1184,7 +1186,7 @@ body.menu-open .mobile-menu {
    ========================================================================== */
 
 .cta-banner {
-  background: linear-gradient(135deg, #101935 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0b192c 0%, #1e3a8a 100%);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: 2.5rem 1.5rem;
@@ -1274,7 +1276,7 @@ body.menu-open .mobile-menu {
    ========================================================================== */
 
 .site-footer {
-  background: #050814;
+  background: #040812;
   border-top: 1px solid var(--border-light);
   padding: 4rem 0 2rem 0;
 }
@@ -1330,7 +1332,7 @@ body.menu-open .mobile-menu {
 }
 
 .footer-links a:hover {
-  color: var(--wa-green);
+  color: var(--light-blue);
 }
 
 .footer-bottom {
@@ -1352,17 +1354,16 @@ body.menu-open .mobile-menu {
 }
 
 /* ==========================================================================
-   Sticky Mobile Bottom Navigation & Floating WA Widget
+   Sticky Mobile Bottom Navigation & Floating WA Widget (KEPT GREEN FOR CRO)
    ========================================================================== */
 
-/* Sticky Bottom Bar for Mobile Screen CRO */
 .mobile-bottom-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 990;
-  background: rgba(11, 19, 43, 0.92);
+  background: rgba(6, 13, 26, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border-light);
@@ -1477,16 +1478,13 @@ body.menu-open .mobile-menu {
   transform: translateX(0);
 }
 
-/* ==========================================================================
-   Proof Toast Notification (Live Activity Social Proof)
-   ========================================================================== */
-
+/* Proof Toast Notification */
 .proof-toast {
   position: fixed;
   bottom: 85px;
   left: 1rem;
   z-index: 980;
-  background: rgba(19, 28, 53, 0.95);
+  background: rgba(15, 28, 56, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--wa-green);
