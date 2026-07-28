@@ -6,15 +6,16 @@
   const proofToast = document.querySelector("[data-proof-toast]");
   const proofName = document.querySelector("[data-proof-name]");
   const proofAction = document.querySelector("[data-proof-action]");
-  const bottomNav = document.querySelector("[data-bottom-nav]");
+  const docPills = document.querySelectorAll(".doc-pill");
   const phone = "628195626777";
 
   const serviceLabels = {
-    apostille: "Apostille dokumen",
-    legalization: "Legalisasi dokumen",
-    translation: "Penerjemah tersumpah",
-    education: "Apostille dokumen pendidikan",
-    marriage: "Apostille dokumen pernikahan"
+    apostille: "Apostille Kemenkumham",
+    legalization: "Legalisasi Dokumen (Kemenlu / Kedutaan)",
+    translation: "Penerjemah Tersumpah",
+    education: "Apostille Dokumen Pendidikan (Ijazah/Transkrip)",
+    marriage: "Apostille Dokumen Pernikahan (Buku Nikah/Akta)",
+    express: "Layanan Express 1-2 Hari Kerja"
   };
 
   const openWhatsApp = (message) => {
@@ -22,14 +23,16 @@
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  // Proof Toast Data (Indonesian names and realistic activity)
   const proofItems = [
-    ["Fat***", "baru mengirim dokumen untuk pemeriksaan awal"],
-    ["Rin***", "baru konsultasi apostille ijazah"],
-    ["And***", "baru memeriksa jalur legalisasi dokumen"],
-    ["Sof***", "baru memeriksa dokumen pernikahan"],
-    ["Hen***", "baru konsultasi penerjemah tersumpah"]
+    ["Fatimah Z.", "baru mengirim foto Ijazah untuk pemeriksaan awal"],
+    ["Rizky P.", "baru konsultasi Apostille Buku Nikah ke Jerman"],
+    ["Andi K.", "baru minta estimasi Penerjemah Tersumpah Bahasa Inggris"],
+    ["Sofia M.", "baru konsultasi Legalisasi Kemenlu & Kedutaan Korea"],
+    ["Hendky S.", "baru menggunakan Layanan Express 1-2 Hari Kerja"]
   ];
 
+  // Mobile Menu Toggle
   if (toggle) {
     toggle.addEventListener("click", () => {
       const isOpen = body.classList.toggle("menu-open");
@@ -44,29 +47,34 @@
     });
   });
 
-  if (bottomNav) {
-    let ticking = false;
-    const syncBottomNav = () => {
-      bottomNav.classList.toggle("is-visible", window.scrollY > 180);
-      ticking = false;
-    };
-    syncBottomNav();
-    window.addEventListener("scroll", () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(syncBottomNav);
-    }, { passive: true });
-  }
+  // Document Pill Selector Interactivity
+  docPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      docPills.forEach((p) => p.classList.remove("active"));
+      pill.classList.add("active");
 
-  document.querySelectorAll("[data-wa-message]").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const message = link.getAttribute("data-wa-message");
-      if (!message) return;
-      event.preventDefault();
-      openWhatsApp(message);
+      const docVal = pill.getAttribute("data-doc");
+      const serviceVal = pill.getAttribute("data-service");
+
+      const docInput = document.getElementById("document");
+      const serviceSelect = document.getElementById("service");
+
+      if (docInput && docVal) {
+        docInput.value = docVal;
+      }
+      if (serviceSelect && serviceVal) {
+        serviceSelect.value = serviceVal;
+      }
+
+      // Smooth scroll to form on mobile if not in view
+      const formCard = document.querySelector(".hero-form-card");
+      if (formCard && window.innerWidth < 992) {
+        formCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     });
   });
 
+  // Dynamic Proof Toast Notification
   if (proofToast && proofName && proofAction) {
     let proofIndex = 0;
     const showProof = () => {
@@ -74,38 +82,44 @@
       proofName.textContent = name;
       proofAction.textContent = action;
       proofToast.classList.add("is-visible");
-      window.setTimeout(() => proofToast.classList.remove("is-visible"), 4600);
+      window.setTimeout(() => proofToast.classList.remove("is-visible"), 4500);
       proofIndex += 1;
     };
 
     const startProof = () => {
-      window.setTimeout(showProof, 2600);
-      window.setInterval(showProof, 11500);
+      window.setTimeout(showProof, 2000);
+      window.setInterval(showProof, 12000);
     };
 
     if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(startProof, { timeout: 5000 });
+      window.requestIdleCallback(startProof, { timeout: 4000 });
     } else {
       window.addEventListener("load", startProof, { once: true });
     }
   }
 
+  // WA Form Submission Handler
   forms.forEach((form) => {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(form);
-      const name = data.get("name") || "Calon klien";
-      const service = serviceLabels[data.get("service")] || data.get("service") || "Apostille dokumen";
-      const documentType = data.get("document") || "Belum disebutkan";
-      const need = data.get("need") || "Saya ingin pemeriksaan awal dokumen.";
+      const name = data.get("name") || "Calon Klien";
+      const service = serviceLabels[data.get("service")] || data.get("service") || "Apostille Dokumen";
+      const documentType = data.get("document") || "Foto Dokumen Khusus";
+      const need = data.get("need") || "Saya ingin pemeriksaan awal dokumen & estimasi biaya.";
+
       const message = [
-        "Halo GOApostille, saya mau konsultasi.",
-        "Saya ingin pemeriksaan awal dokumen sebelum proses dimulai.",
-        `Nama: ${name}`,
-        `Layanan: ${service}`,
-        `Jenis dokumen: ${documentType}`,
-        `Catatan: ${need}`
+        "Halo Admin GOApostille.com 👋",
+        "Saya mau konsultasi & review gratis dokumen:",
+        "",
+        `👤 Nama: ${name}`,
+        `📋 Layanan: ${service}`,
+        `📄 Jenis Dokumen: ${documentType}`,
+        `📌 Catatan / Negara Tujuan: ${need}`,
+        "",
+        "Mohon bantuannya untuk pemeriksaan awal & jalur pengesahan yang tepat. Terima kasih!"
       ].join("\n");
+
       openWhatsApp(message);
     });
   });
