@@ -1069,10 +1069,10 @@ function services(page) {
       return `
         <article class="service-card ${isExpress ? "express-card" : ""}">
           <div class="service-card-top">
-            <div class="service-icon-box" ${isExpress ? 'style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;"' : ''}>
+            <div class="service-icon-box" ${isExpress ? 'style="background: rgba(2, 132, 199, 0.12); color: #0284c7;"' : ''}>
               ${iconSvg(service.icon || "apostille")}
             </div>
-            ${service.badge ? `<span class="service-badge" ${isExpress ? 'style="background: var(--light-blue); color: #041026;"' : ''}>${escapeHtml(service.badge)}</span>` : ""}
+            ${service.badge ? `<span class="service-badge">${escapeHtml(service.badge)}</span>` : ""}
           </div>
           <h3>${escapeHtml(service.title)}</h3>
           <p>${escapeHtml(service.text)}</p>
@@ -1224,7 +1224,7 @@ function faq(page) {
     .join("");
 
   return `
-    <section class="section-padding" id="faq" style="background: var(--primary-navy-surface); border-top: 1px solid var(--border-light);">
+    <section class="section-padding" id="faq" style="background: var(--bg-surface-alt); border-top: 1px solid var(--border-light);">
       <div class="container">
         <div class="section-head">
           <div class="kicker">FAQ</div>
@@ -1349,7 +1349,7 @@ function html(page) {
     <title>${escapeHtml(page.title)}</title>
     <meta name="description" content="${escapeHtml(page.description)}">
     <meta name="keywords" content="${escapeHtml(page.keywords)}">
-    <meta name="theme-color" content="#071120">
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:type" content="website">
     <meta property="og:title" content="${escapeHtml(page.title)}">
     <meta property="og:description" content="${escapeHtml(page.description)}">
@@ -1375,11 +1375,11 @@ function html(page) {
     </main>
     ${footer(page)}
 
-    <!-- Mobile Bottom CRO Bar (Light Blue) -->
+    <!-- Mobile Bottom CRO Bar (WhatsApp Green Button) -->
     <div class="mobile-bottom-bar" aria-label="Navigasi Akses Cepat Mobile">
       <div class="bottom-bar-info">
         <strong>${page.lang === "en" ? "Free Document Review" : "Pemeriksaan Dokumen Gratis"}</strong>
-        <span>🔷 ${page.lang === "en" ? "Admin Online via WhatsApp" : "Admin Online via WhatsApp"}</span>
+        <span>🟢 ${page.lang === "en" ? "Admin Online via WhatsApp" : "Admin Online via WhatsApp"}</span>
       </div>
       <a class="btn-bottom-wa" href="${waUrl(page.defaultMessage)}" target="_blank" rel="noopener">
         ${iconSvg("chat")}
@@ -1387,7 +1387,7 @@ function html(page) {
       </a>
     </div>
 
-    <!-- Floating Light Blue Button Desktop -->
+    <!-- Floating WhatsApp Green Button Desktop -->
     <a class="floating-wa-btn" href="${waUrl(page.defaultMessage)}" target="_blank" rel="noopener" aria-label="WhatsApp">
       <span class="floating-wa-tooltip">${page.lang === "en" ? "Free WhatsApp Consultation" : "Konsultasi Gratis via WhatsApp"}</span>
       ${iconSvg("chat")}
